@@ -1,0 +1,31 @@
+﻿/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+
+
+// Typography
+$defaultFontSize: 16;
+
+// Paths
+// Blob:
+$contentBasePath: "http://hueratefiles.blob.core.windows.net/public/Content/";
+// Local:
+// $contentBasePath: "/Content/";
+
+
+$imagesPath: $contentBasePath + "Images/";
+$homeImagesPath: $imagesPath + "Home/";
+$adminImagesPath: $imagesPath + "Admin/";
+$fontsPath: $contentBasePath + "Fonts/";
+
+// Colors
+$colorRed: #f04400;
+$headerColor: #4e4946;
+$textColor: #5e5e5e;
+
+// Other
+$defaultBorderRadius: 30;

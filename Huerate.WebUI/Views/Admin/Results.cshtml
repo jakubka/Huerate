@@ -1,0 +1,36 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@model Huerate.WebViewModels.Admin.ResultsModel
+@using System.Globalization
+@using Huerate.WebUI.HtmlHelpers
+
+@{
+    ViewBag.Title = Html.Tr("General_RestaurantAdministration") + " " + ViewBag.CurrentUser.DisplayName;
+    Layout = "../Layout/_AdminLayout.cshtml";
+}
+
+@section Script {
+    @*<script src="@Url.Action("GetCustomTranslationsScript", "Translation")"> </script>*@
+    
+@*    <script type="text/javascript">
+        var currentLanguage = '@ViewBag.CurrentLanguage';
+
+        var translator = new Translator(null, customTranslations, currentLanguage);
+    </script>*@
+}
+
+<div class="results-wrapper">
+    <h1>@Html.Tr("Results")</h1>
+    
+    @RenderSection("Navigation", false)
+
+    <div class="clear"></div>    
+
+    @RenderSection("Results")
+</div>

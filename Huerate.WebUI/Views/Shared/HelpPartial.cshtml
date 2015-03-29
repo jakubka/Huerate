@@ -1,0 +1,118 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using Huerate.WebUI.HtmlHelpers
+
+<div class="help-wrapper">
+    <p>
+        Huerate je diplomová práce tvořena na Fakultně Informačních Technologií v Brně.
+    </p>
+    <p>
+        Na této stránce naleznete postup, jak použít službu ve Vaší restauraci. Pokud byste přece jenom potřebovali více informací, tak se obraťte na email <a href="mailto:jakub@huerate.cz">jakub@huerate.cz</a>.
+    </p>
+    
+    <h3>Kroky potřebné pro zprovoznění systému ve Vaší restauraci:</h3>
+    <ol>
+        <li><a href="#step1">Registrace</a></li>
+        <li><a href="#step2">Vyzvednutí unikátního odkazu</a></li>
+        <li><a href="#step3">Navedení hostů na formulář</a></li>
+        <li><a href="#step4">Sledování výsledků</a></li>
+        <li><a href="#step5">Vyhodnocení výsledků</a> (volitelné)</li>
+        <li><a href="#step6">Zpětná vazba pro autora služby</a> (volitelné)</li>
+    </ol>
+
+    <h2 id="step1">Krok 1: Registrace</h2>
+    
+    <p>Nejdříve je třeba zaregistrovat Vaší restauraci na stránce @Html.ActionLink(Url.Action("SignUp", "HomePage", null, "http"), "SignUp", "HomePage"). Je potřeba vyplnit název Vaší restaurace, email a heslo. Pomocí emailu a hesla se budete přihlašovat do systému.</p>
+    
+    <div class="centered">
+        <a href="@Url.Action("SignUp", "HomePage")">
+            <img src="@Url.WebObjectPath("~/Content/Images/Admin/screenshot-signup.png")" alt="Registrace do systému" style="width: 60%;" />
+        </a>
+    </div>
+
+    <h2 id="step2">Krok 2: Vyzvednutí unikátního odkazu</h2>
+    <p>
+        Hosté Vaší restaurace odesílají zpětnou vazbu pomocí svých mobilních telefonů. Aby tak mohli učinit, musí se dostat na formulář s dotazníkem.
+    </p>
+    <p>
+        Pro vyzvednutí odkazu se je třeba přihlásit do administrace na stránce @Html.ActionLink(Url.Action("SignIn", "HomePage", null, "http"), "SignIn", "HomePage") (pokud jste právě provedli krok 1, tak už přihlášení jste, protože po registraci dojde k přihlášení automaticky).
+    </p>
+    <p>
+        Po příhlášení uvidíte v horní části administrace Váš odkaz vedoucí na odpovědní formulář Vaší restaurace, jako na následujícím obrázku. Vedle odkazu je i QR kód, který můžete umístit na tištěné materiály vedle odkazu - toto umožní hostům rychleji přejít na dotazník na svých telefonech.
+    </p>
+ 
+    <div class="centered">
+        <img src="@Url.WebObjectPath("~/Content/Images/Admin/screenshot-uniquelink.png")" alt="Váš unikátní odkaz" style="width: 80%;" />
+    </div>    
+
+    <h2 id="step3">Krok 3: Navedení hostů na formulář</h2>
+    <p>
+        Třetím krokem je umístění Vašeho unikátního odkazu na stůl v restauraci nebo kdekoliv jinde, kde se k němu host dostane. Host pak na svém telefonu přejde na tento odkaz a odpoví na otázky.
+    </p>
+    <p>
+        Kde se rozhodnete umístit odkaz je čistě na Vás. Níže uvádíme nejčastěji používáné možnosti:
+    </p>
+    <ul>
+        <li>Do jídelního lístku</li>
+        <li>Jako samostnaný leták na stůl</li>
+        <li>Do letáku s denním menu</li>
+        <li>Jako plakát na toaletách</li>
+        <li>Vizitky, které budete rozdávat při placení</li>
+        <li>Na účtenku</li>
+        <li>Na Vaše webové stránky</li>
+        <li>... a další</li>
+    </ul>
+    
+    <p>
+        Vzor letáku si můžete stáhnout <a href="@Url.WebObjectPath("~/Content/Download/huerate_letak.docx")">tady</a>. Informace na něm je třeba upravit pro Vaší restauraci (tj. změnit název, odkaz na formulář a QR kód). Pokud byste měli zájem o použítí letáku jiného formátu (třeba menší pro použití jako vizitku), tak Vám můžu pomoci. Předpřipravený leták vypadá asi takto:
+    </p>
+
+    <div class="centered">
+        <a href="@Url.WebObjectPath("~/Content/Download/huerate_letak.docx")">
+            <img src="@Url.WebObjectPath("~/Content/Images/Admin/screenshot-poster.png")" alt="Leták" style="width: 25%;" />
+        </a>
+    </div>
+
+    <h2 id="step4">Krok 4: Sledování výsledků</h2>
+    <p>
+        Po rozpropagování odkazu na formulář mezi Vašími hosty, by měly začít přibývat odpovědi. Pro zvýšení počtu odpovědi je vhodné aktivně hosty prosit o vyplnění formuláře.
+    </p>
+    <p>
+        Odpovědi je možné sledovat na úvodní stránce administrace (@Html.ActionLink(Url.Action("Index", "Admin", null, "http"), "Index", "Admin"))).
+    </p>
+
+    <div class="centered">
+        <img src="@Url.WebObjectPath("~/Content/Images/Admin/screenshot-results.png")" alt="Výsledky" style="width: 60%;" />
+    </div>
+
+    <h2 id="step5">Krok 5: Vyhodnocení výsledků</h2>
+    <p>
+        Na základě získaných dat můžete zlepšit fungování Vaší restaurace v oblastech, které to nejvíc potřebuji a tím získat více hostů. 
+    </p>
+    
+    <p>
+        Další možnosti použití výsledků je pro reklamní účely, např. slogan ve stylu "98% zákazníků bylo spokojeno s kvalitou jídla v naší restauraci" určitě přitáhne další návštěvníky.
+    </p>
+
+    <h2 id="step6">Krok 6: Zpětná vazba pro autora služby</h2>
+    <p>
+        Budu velmi rád, pokud mi sdělíte svě názory na službu Huerate. Pomůže mi to ve vypracování lepší diplomové práce. Své názory můžete posílát na e-mailovou adresu <a href="mailto:jakub@huerate.cz">jakub@huerate.cz</a>. Děkuji!
+    </p>
+    
+    
+    <h2 id="tip1" style="margin-top: 4em;">Tip 1: Úprava otázek</h2>
+    <p>
+        Po vytvoření účtu jsou automaticky vytvořeny otázky co nejobecnější pro většinu restauraci. Tyto otázky Vám ale z nějakého důvodu nemusí vyhovovat a můžete si je přizůsobit dle libosti po kliku na @Html.ActionLink("Upravit formulář", "EditForm", "Admin") ve Vaší administraci.
+    </p>
+
+    <h2 id="tip2">Tip 2: Úprava kódu restaurace</h2>
+    <p>
+        Kód restaurace je řetězec, který se používá v odkazu na Váš formulář. Tento kód je vhodné udržovat co nejkratší, aby měli hosté co nejjednodušší úkol ho přepsat do svého telefonu. Svůj kód si můžete upravit v sekci @Html.ActionLink("Nastavení restauraec", "RestaurantSettings", "Admin") v administraci.
+    </p>
+</div>

@@ -1,0 +1,68 @@
+﻿/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+
+
+///
+// Liberation Serif
+
+@font-face {
+	font-family: 'LiberationSerifRegular';
+	src: url($fontsPath + 'LiberationSerif-Regular.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LiberationSerifBold';
+	src: url($fontsPath + 'LiberationSerif-Bold.ttf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LiberationSerifBoldItalic';
+	src: url($fontsPath + 'LiberationSerif-BoldItalic.ttf');
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'LiberationSerifItalic';
+	src: url($fontsPath + 'LiberationSerif-Italic.ttf');
+	font-weight: normal;
+}
+
+///
+// Open sans
+
+@font-face {
+	font-family: 'OpenSansRegular';
+	src: url($fontsPath + 'OpenSans-Regular.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'OpenSansLight';
+	src: url($fontsPath + 'OpenSans-Light.ttf');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'OpenSansBold';
+	src: url($fontsPath + 'OpenSans-Bold.ttf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'OpenSansExtraBold';
+	src: url($fontsPath + 'OpenSans-ExtraBold.ttf');
+	font-weight: 900;
+	font-style: normal;
+}

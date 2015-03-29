@@ -1,0 +1,49 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using Huerate.WebUI.HtmlHelpers
+@model Huerate.WebViewModels.Form.FormPercentQuestionsStepModel
+
+@if (Model.PercentQuestions.Count == 1)
+{
+    var mainQuestion = Model.PercentQuestions[0];
+    <div class="first">
+        <div class="welcome-img">
+            <img src="@Url.WebObjectPath(mainQuestion.ImagePath)" alt="Restaurace" />
+        </div>
+        <h1 data-bind="text: trObs('@mainQuestion.QuestionText')"></h1>
+        @Html.Partial("Slider", mainQuestion.QuestionId)
+        <div class="slider-hint">
+            <span class="left" data-bind="text: trObs('Form_TheWorst')"></span>
+            <span class="right" data-bind="text: trObs('Form_TheBest')"></span>
+        </div>
+    </div>
+}
+else
+{
+    <div class="special">
+        @foreach (var q in Model.PercentQuestions)
+        {
+            <div class="hue small">
+                <div class="left">
+                    @if (q.ImagePath != null)
+                    {
+                        <div class="img">
+                            <img src="@Url.WebObjectPath(q.ImagePath)" alt="@q.QuestionText" />
+                        </div>
+                    }
+                    <p data-bind="text: trObs('@q.QuestionText')"></p>
+                </div>
+                <div class="right">
+                    @Html.Partial("Slider", q.QuestionId)
+                </div>
+                <div class="clear"></div>
+            </div>
+        }
+    </div>
+}

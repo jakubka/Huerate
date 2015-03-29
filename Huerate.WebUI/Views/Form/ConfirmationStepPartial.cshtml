@@ -1,0 +1,18 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using Huerate.WebUI.HtmlHelpers
+@model Huerate.WebViewModels.Form.FormConfirmationStepModel
+
+<div class="content-wrapper centered thankyou">
+    <h1 data-bind="text: trObs('@Model.TitleText')"></h1>
+    <p data-bind="text: trObs('@Model.InfoText')"></p>
+    <div class="img-wrapper">
+        <img src="@Url.WebObjectPath("~/Content/Images/Form/thank-you.png")" alt="Thank You" style="cursor: pointer" onclick="location.reload();" />
+    </div>
+</div>

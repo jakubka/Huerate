@@ -1,0 +1,84 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@model Huerate.WebViewModels.Admin.DayResultsModel
+@using System.Globalization
+@using Huerate.WebUI.HtmlHelpers
+
+@{
+    ViewBag.Title = Html.Tr("General_RestaurantAdministration") + " " + ViewBag.CurrentUser.DisplayName;
+    Layout = "../Layout/_AdminLayout.cshtml";
+}
+
+@section Script {
+    <script src="@Url.Action("GetCustomTranslationsScript", "Translation")"> </script>
+    
+    <script type="text/javascript">
+        var currentLanguage = '@ViewBag.CurrentLanguage';
+
+        var translator = new Translator(null, customTranslations, currentLanguage);
+    </script>
+}
+
+<div class="results-wrapper">
+    <h1>@Html.Tr("Results")</h1>
+
+    <div class="date-nav">
+        @{
+            CultureInfo currentCulture = new CultureInfo(ViewBag.CurrentLanguage);
+
+            string longDatePattern = currentCulture.DateTimeFormat.LongDatePattern;
+        }
+
+        <span class="results-day">@Model.Day.ToString(longDatePattern, currentCulture)</span>
+
+        <ul>
+            @{
+                string prevDayTitle = string.Format(Html.Tr("NextDayTooltip"), Model.Day.AddDays(-1).ToString(longDatePattern, currentCulture));
+                string nextDayTitle = string.Format(Html.Tr("NextDayTooltip"), Model.Day.AddDays(1).ToString(longDatePattern, currentCulture));
+            }
+
+            <li>@Html.ActionLink(Html.Tr("PrevDay"), "Index", new {day = (Model.DayModifier - 1)}, new {@class = "prevmonth", title = prevDayTitle})</li>
+
+            @if (Model.DayModifier < 0)
+            {
+                <li>@Html.ActionLink(Html.Tr("NextDay"), "Index", new {day = (Model.DayModifier + 1)}, new {@class = "nextmonth", title = nextDayTitle})</li>
+            }
+        </ul>
+    </div>
+    <div class="clear"></div>
+    
+    @foreach (var q in Model.Questions)
+    {
+        @Html.Partial("QuestionPartial", q)
+    }
+
+    
+    <div class="text-answers">
+        @if (Model.TextAnswers.Any())
+        {
+            <h3>@Html.TrFormat("TextAnswers", Model.Day.ToString(longDatePattern, currentCulture)):</h3>
+            <ul>
+                @{
+                    string timePattern = currentCulture.DateTimeFormat.ShortTimePattern;
+                }
+
+                @foreach (var textAnswer in Model.TextAnswers)
+                {
+                    <li>
+                        <b>@textAnswer.Created.ToString(timePattern, currentCulture)</b>: @textAnswer.TextAnswer
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <i>@Html.TrFormat("NoTextAnswers", Model.Day.ToString(longDatePattern, currentCulture))</i>
+        }
+    </div>
+</div>

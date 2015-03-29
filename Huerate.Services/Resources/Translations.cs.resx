@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="Action_Logout" xml:space="preserve">
+    <value>Odhlásit se</value>
+  </data>
+	<data name="Admin_DayResults" xml:space="preserve">
+    <value>Odpovědi hostů (denní)</value>
+  </data>
+	<data name="AreYouInterested" xml:space="preserve">
+    <value>Zajímá vás, co chtějí vaší zákazníci?</value>
+  </data>
+	<data name="AskThem" xml:space="preserve">
+    <value>Zeptejte se jich!</value>
+  </data>
+	<data name="General_Email_Address" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+	<data name="General_LogIn" xml:space="preserve">
+    <value>Přihlásit se</value>
+  </data>
+	<data name="General_Password" xml:space="preserve">
+    <value>Heslo</value>
+  </data>
+	<data name="Form_ThankYou" xml:space="preserve">
+    <value>Děkujeme!</value>
+  </data>
+	<data name="Form_TheBest" xml:space="preserve">
+    <value>Nejlepší</value>
+  </data>
+	<data name="Form_TheWorst" xml:space="preserve">
+    <value>Nejhorší</value>
+  </data>
+	<data name="Form_WeAppreciateYourHelp" xml:space="preserve">
+    <value>Velice si vážíme vaší pomoci</value>
+  </data>
+	<data name="Home_CollectCustomerFeedback1" xml:space="preserve">
+    <value>Prvním krokem je vytvoření si účtu</value>
+  </data>
+	<data name="Home_CollectCustomerFeedback2" xml:space="preserve">
+    <value>Je to zcela zdarma</value>
+  </data>
+	<data name="Home_CollectCustomerFeedback3" xml:space="preserve">
+    <value>Svůj účet můžete kdykoliv smazat</value>
+  </data>
+	<data name="Home_CollectCustomerFeedback_A" xml:space="preserve">
+    <value>Sběr zákaznícké</value>
+  </data>
+	<data name="Home_CollectCustomerFeedback_B" xml:space="preserve">
+    <value>zpětné vazby</value>
+  </data>
+	<data name="Home_Everything" xml:space="preserve">
+    <value>líbilo</value>
+  </data>
+	<data name="Home_Feature1_Caption" xml:space="preserve">
+    <value>Funguje na každém zařízení</value>
+  </data>
+	<data name="Home_Feature1_Text" xml:space="preserve">
+    <value>Huerate je webový nástroj, který běží na telefonu Vaších hostů. Jediné co je třeba, je internetové přípojení.</value>
+  </data>
+	<data name="Home_Feature2_Caption" xml:space="preserve">
+    <value>Denní statistiky</value>
+  </data>
+	<data name="Home_Feature2_Text" xml:space="preserve">
+    <value>můžete si kdykoliv prohlédnout, jak si vede Vaše restaurace v zaheslovaném administračním rozhraní</value>
+  </data>
+	<data name="Home_Feature3_Caption" xml:space="preserve">
+    <value>Rychlé na použiti, poskytuje dostatek zpětné vazby</value>
+  </data>
+	<data name="Home_Feature3_Text" xml:space="preserve">
+    <value>Jedná odpověď nezabere víc než minutu, ale otázky jsou navrženy tak, aby to stačilo na vyjádření toho nejdůležitějšího.</value>
+  </data>
+	<data name="Home_Features" xml:space="preserve">
+    <value>Funkce</value>
+  </data>
+	<data name="Home_HowItWorks" xml:space="preserve">
+    <value>Jak to funguje</value>
+  </data>
+	<data name="Home_HowItWorks1_Caption" xml:space="preserve">
+    <value>Vytvořte si účet pro svou restauraci</value>
+  </data>
+	<data name="Home_HowItWorks1_Text" xml:space="preserve">
+    <value>Nezabere to víc než 3 minuty</value>
+  </data>
+	<data name="Home_HowItWorks2_Caption" xml:space="preserve">
+    <value>Vyzvedněte si unikátní odkaz</value>
+  </data>
+	<data name="Home_HowItWorks2_Text" xml:space="preserve">
+    <value>Například huerate.cz/mojerestaurace</value>
+  </data>
+	<data name="Home_HowItWorks3_Caption" xml:space="preserve">
+    <value>Dejte odkaz Vaším hostům</value>
+  </data>
+	<data name="Home_HowItWorks3_Text" xml:space="preserve">
+    <value>Například ho vložte do jídelního lístku nebo položte na stoly</value>
+  </data>
+	<data name="Home_HowItWorks4_Caption" xml:space="preserve">
+    <value>Sbírejte výsledky</value>
+  </data>
+	<data name="Home_HowItWorks4_Text" xml:space="preserve">
+    <value>Výsledky si můžete prohlížet po zalogování do svého účtu</value>
+  </data>
+	<data name="Home_Intro" xml:space="preserve">
+    <value>Huerate je nástroj pro sběr názorů hostů na Vaší resturaci. Pomocí Huerate se dovíte co přesně chtějí Vaši hosté.</value>
+  </data>
+	<data name="Home_ItsFree" xml:space="preserve">
+    <value>Je to zcela zdarma a svůj účet můžete kdykoliv smazat</value>
+  </data>
+	<data name="Home_JoinMailingList" xml:space="preserve">
+    <value>Přihlaste se k odběru novinek</value>
+  </data>
+	<data name="Home_RequestFeature" xml:space="preserve">
+    <value>Máte nápad na novou funkci?</value>
+  </data>
+	<data name="Home_RequestFeature_Text" xml:space="preserve">
+    <value>Tvrdě pracujeme, abychom z Huerate udělali nejlepší nástroj na zběr zákaznícké zpětné vazby v restauracích. {0}Ozvěte se nám{1}, pokud Vám chybí nějaká funkce nebo jste našli chybu.</value>
+    <comment>We work hard to make Huerate the best tool for collecting customer feedback. {0}Contact us{1} to request a feature you’re missing in the app.</comment>
+  </data>
+	<data name="Home_SoHowWas" xml:space="preserve">
+    <value>Jak se Vám u nás</value>
+  </data>
+	<data name="Huerate_Title" xml:space="preserve">
+    <value>Huerate.cz</value>
+  </data>
+	<data name="Lost_Password" xml:space="preserve">
+    <value>Zapomenuté heslo?</value>
+  </data>
+	<data name="NewsletterSubmit" xml:space="preserve">
+    <value>Odeslat</value>
+  </data>
+	<data name="NextDay" xml:space="preserve">
+    <value>Další den</value>
+  </data>
+	<data name="NextDayTooltip" xml:space="preserve">
+    <value>Přejít na {0}.</value>
+  </data>
+	<data name="PrevDay" xml:space="preserve">
+    <value>Předchozí den</value>
+  </data>
+	<data name="Restaurant_Create" xml:space="preserve">
+    <value>Vytvořit účet pro restauraci</value>
+  </data>
+	<data name="Restaurant_Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+	<data name="Restaurant_Name" xml:space="preserve">
+    <value>Název restaurace</value>
+  </data>
+	<data name="Restaurant_Password" xml:space="preserve">
+    <value>Heslo</value>
+  </data>
+	<data name="Results" xml:space="preserve">
+    <value>Výsledky</value>
+  </data>
+	<data name="Settings" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+	<data name="StayInTouch" xml:space="preserve">
+    <value>Zůstaňme v kontaktu!</value>
+  </data>
+	<data name="Admin_DayTextAnswers" xml:space="preserve">
+    <value>Textové odpovědi z {0}</value>
+  </data>
+	<data name="Thanks" xml:space="preserve">
+    <value>Díky!</value>
+  </data>
+	<data name="Update_Form" xml:space="preserve">
+    <value>Upravit formulář</value>
+  </data>
+	<data name="WeWillLetYouKnow" xml:space="preserve">
+    <value>Dáme vám vědět, co je nového.</value>
+  </data>
+	<data name="WriteUs" xml:space="preserve">
+    <value>Napište nám.</value>
+  </data>
+	<data name="YourEmail" xml:space="preserve">
+    <value>Váš e-mail</value>
+  </data>
+	<data name="YourSurveyLink" xml:space="preserve">
+    <value>Váš odkaz na formulář:</value>
+  </data>
+	<data name="SignInPage_Title" xml:space="preserve">
+    <value>Huerate.cz - přihlášení</value>
+  </data>
+	<data name="SignInPage_OnPageTitle" xml:space="preserve">
+    <value>Přihlášení</value>
+  </data>
+	<data name="SignUpPage_Title" xml:space="preserve">
+    <value>Huerate.cz - registrace</value>
+  </data>
+	<data name="SignUpPage_OnPageTitle" xml:space="preserve">
+    <value>Registrace</value>
+  </data>
+	<data name="Action_EnterAdmin" xml:space="preserve">
+    <value>Vstoupit do administrace</value>
+  </data>
+	<data name="Admin_Answers" xml:space="preserve">
+    <value>odpovědi</value>
+  </data>
+	<data name="General_Down" xml:space="preserve">
+    <value>Dolů</value>
+  </data>
+	<data name="General_RestaurantAdministration" xml:space="preserve">
+    <value>Administrace restaurace </value>
+  </data>
+	<data name="General_Up" xml:space="preserve">
+    <value>Nahoru</value>
+  </data>
+	<data name="Admin_Help" xml:space="preserve">
+    <value>Nápověda</value>
+  </data>
+	<data name="Admin_DayNoTextAnswers" xml:space="preserve">
+    <value>Dne {0} nebyly odeslány žádné textové odpovědi</value>
+  </data>
+	<data name="Question_Enviroment_Text" xml:space="preserve">
+    <value>Prostředí</value>
+  </data>
+	<data name="Question_Food_Text" xml:space="preserve">
+    <value>Jídlo</value>
+  </data>
+	<data name="Question_Overall_1" xml:space="preserve">
+    <value>Doporučili byste restauraci známým?</value>
+  </data>
+	<data name="Question_Overall_2" xml:space="preserve">
+    <value>Splnila restaurace Vaše očekávání?</value>
+  </data>
+	<data name="Question_Overall_3" xml:space="preserve">
+    <value>Vrátíte se k nám?</value>
+  </data>
+	<data name="Question_Overall_Text" xml:space="preserve">
+    <value>Celková spokojenost</value>
+  </data>
+	<data name="Question_Service_Text" xml:space="preserve">
+    <value>Obsluha</value>
+  </data>
+	<data name="Question_Service_1" xml:space="preserve">
+    <value>Byla obsluha dostatečně rychlá?</value>
+  </data>
+	<data name="Question_Service_2" xml:space="preserve">
+    <value>Byla obsluha dostatečně ochotná?</value>
+  </data>
+	<data name="Question_Service_3" xml:space="preserve">
+    <value>Všímala si Vás obsluha dostatečně? </value>
+  </data>
+	<data name="Question_Food_1" xml:space="preserve">
+    <value>Mělo jídlo správnou teplotu?</value>
+  </data>
+	<data name="Question_Food_2" xml:space="preserve">
+    <value>Bylo jídlo chutné?</value>
+  </data>
+	<data name="Question_Food_3" xml:space="preserve">
+    <value>Byla porce dostatečně velká?</value>
+  </data>
+	<data name="Question_Food_4" xml:space="preserve">
+    <value>Odpovídalo jídlo popisu v jídelním lístku?</value>
+  </data>
+	<data name="Question_Enviroment_1" xml:space="preserve">
+    <value>Byla hudba příliš hlasitá?</value>
+  </data>
+	<data name="Question_Enviroment_2" xml:space="preserve">
+    <value>Byl v restauraci pořádek a čisto?</value>
+  </data>
+	<data name="Question_Enviroment_3" xml:space="preserve">
+    <value>Hodila se hudba k typu podniku?</value>
+  </data>
+	<data name="Question_Enviroment_4" xml:space="preserve">
+    <value>Odpovídala Vám teplota v restauraci?</value>
+  </data>
+	<data name="Question_Enviroment_5" xml:space="preserve">
+    <value>Byly toalety dostatečně uklizené?</value>
+  </data>
+	<data name="Question_Enviroment_6" xml:space="preserve">
+    <value>Bylo na toaletách všechno potřebné vybavení?</value>
+  </data>
+	<data name="Question_Enviroment_7" xml:space="preserve">
+    <value>Bylo prostředí restaurace příliš zakouřené?</value>
+  </data>
+	<data name="Home_IncorrectEmailOrPassword" xml:space="preserve">
+    <value>Nesprávný e-mail nebo heslo</value>
+  </data>
+	<data name="ErrorPage_Title" xml:space="preserve">
+    <value>Huerate.cz - chyba</value>
+  </data>
+	<data name="ErrorPage_OnPageTitle" xml:space="preserve">
+    <value>Na stránce došlo k chybě</value>
+  </data>
+	<data name="ErrorPage_Apologies" xml:space="preserve">
+    <value>Omlouváme se, na stránce došlo k chybě. Byl zaslán email správci a chyba bude brzy opravena. Popis  chyby: &lt;b&gt;{0}&lt;/b&gt;</value>
+  </data>
+	<data name="LostPassword_Success" xml:space="preserve">
+    <value>Nové heslo bylo zasláno na adresu {0}.</value>
+  </data>
+	<data name="LostPasswordPage_Title" xml:space="preserve">
+    <value>Huerate.cz - zapomenuté heslo</value>
+  </data>
+	<data name="LostPasswordPage_OnPageTitle" xml:space="preserve">
+    <value>Zapomenuté heslo</value>
+  </data>
+	<data name="Action_SendNewPassword" xml:space="preserve">
+    <value>Poslat nové heslo</value>
+  </data>
+	<data name="HelpPage_Title" xml:space="preserve">
+    <value>Huerate.cz - návod k použití</value>
+  </data>
+	<data name="HelpPage_OnPageTitle" xml:space="preserve">
+    <value>Návod k použití</value>
+  </data>
+	<data name="Admin_DownloadQrCode" xml:space="preserve">
+    <value>QR kód, který si můžou Vaší hosté načíst na svých mobilních telefonech. Klikněte pro stáhnuti.</value>
+  </data>
+	<data name="General_Contact" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+	<data name="Admin_EmailChangedSuccessfully" xml:space="preserve">
+		<value>Přihlašovací email byl úspěšně změněn</value>
+	</data>
+	<data name="Admin_PasswordChangedSuccessfully" xml:space="preserve">
+		<value>Heslo bylo úspěšně změněno</value>
+	</data>
+	<data name="Admin_WrongCurrentPassword" xml:space="preserve">
+		<value>Bylo zadáno špatné aktuální heslo</value>
+	</data>
+	<data name="Admin_DeleteAccountLegend" xml:space="preserve">
+		<value>Zrušení účtu</value>
+	</data>
+	<data name="Admin_DeleteAccountDisclaimer" xml:space="preserve">
+		<value>Upozornění: zrušení účtu je nevratná operace. Po provedení operace se nebude možné přihlásit do administrace ani zobrazit data.</value>
+	</data>
+	<data name="Admin_ConfirmAccountDelete" xml:space="preserve">
+		<value>Opravdu chcete nevratně zrušit Váš účet?</value>
+	</data>
+	<data name="Admin_DeleteAccountButton" xml:space="preserve">
+		<value>Zrušit účet</value>
+	</data>
+	<data name="Admin_NewLoginEmailLegend" xml:space="preserve">
+		<value>Změna přihlašovacího emailu</value>
+	</data>
+	<data name="Admin_NewLoginEmail" xml:space="preserve">
+		<value>Nový přihlašovací email</value>
+	</data>
+	<data name="Admin_ChangeEmail" xml:space="preserve">
+		<value>Změnit email</value>
+	</data>
+	<data name="Admin_ChangePasswordLegend" xml:space="preserve">
+		<value>Změna přihlašovacího hesla</value>
+	</data>
+	<data name="Admin_CurrentPassword" xml:space="preserve">
+		<value>Aktuální heslo</value>
+	</data>
+	<data name="Admin_NewPassword" xml:space="preserve">
+		<value>Nové heslo</value>
+	</data>
+	<data name="Admin_NewPassword2" xml:space="preserve">
+		<value>Potvrzení nového hesla</value>
+	</data>
+	<data name="Admin_ChangePasswordButton" xml:space="preserve">
+		<value>Změnit heslo</value>
+	</data>
+	<data name="Admin_FormSettings" xml:space="preserve">
+		<value>Nastavení dotazníku</value>
+	</data>
+	<data name="Admin_RestaurantSettings" xml:space="preserve">
+		<value>Nastavení restaurace</value>
+	</data>
+	<data name="Admin_AccountSettings" xml:space="preserve">
+		<value>Nastavení účtu</value>
+	</data>
+	<data name="Admin_NewLoginEmailInfo" xml:space="preserve">
+		<value>Pomocí tohoto emailu se přihlašujete do systému a jsou na něj zasílány notifikace</value>
+	</data>
+	<data name="Admin_CurrentPasswordInfo" xml:space="preserve">
+		<value>Zadejte aktuální heslo, pro ověření, že jste to opravdu Vy</value>
+	</data>
+	<data name="Admin_NewPasswordInfo" xml:space="preserve">
+		<value>Zadejte nové heslo. Heslo musí obsahovat alespoň 6 znaků</value>
+	</data>
+	<data name="Admin_NewPassword2Info" xml:space="preserve">
+		<value>Zopakujte nové heslo jako kontrolu proti překlepům</value>
+	</data>
+	<data name="Admin_RestaurantInfoSettingsLegend" xml:space="preserve">
+		<value>Nastavení údajů o restauraci</value>
+	</data>
+	<data name="Admin_RestaurantInfoDisplayName" xml:space="preserve">
+		<value>Název restaurace</value>
+	</data>
+	<data name="Admin_RestaurantInfoDisplayNameInfo" xml:space="preserve">
+		<value>Tento název se bude zobrazovat na formuláři jako informace pro návštěvníka</value>
+	</data>
+	<data name="Admin_RestaurantInfoCodeName" xml:space="preserve">
+		<value>Kód restaurace</value>
+	</data>
+	<data name="Admin_RestaurantInfoCodeNameInfo" xml:space="preserve">
+		<value>Tento kód tvoří adresu Vaší restaurace, na které se nachází formulář pro hosty. Měl by obsahovat pouze písmena bez diakritiky a číslice, případně pomlčky. Po změně je třeba upravit adresu na tištěných materiálech a stáhnout nový QR kód.</value>
+	</data>
+	<data name="Admin_ChangeRestaurantInfoButton" xml:space="preserve">
+		<value>Změnit základní údaje o restauraci</value>
+	</data>
+	<data name="Admin_RestaurantSettingsChanged" xml:space="preserve">
+		<value>Údaje o restauraci byly úspěšně změněny</value>
+	</data>
+	<data name="Admin_ClickToEditQuestion" xml:space="preserve">
+		<value>Editovat otázku</value>
+	</data>
+	<data name="Admin_ClickToSaveQuestion" xml:space="preserve">
+		<value>Uložit změny</value>
+	</data>
+	<data name="Admin_ClickToDeleteQuestion" xml:space="preserve">
+		<value>Smazat otázku</value>
+	</data>
+	<data name="Admin_ConfirmDeleteQuestion" xml:space="preserve">
+		<value>Opravdu chcete smazat otázku? Tato operace je nevratná.</value>
+	</data>
+	<data name="Admin_MainQuestion" xml:space="preserve">
+		<value>Hlavní otázka</value>
+	</data>
+	<data name="Admin_QuestionsWithSliders" xml:space="preserve">
+		<value>Otázky s posuvníkem</value>
+	</data>
+	<data name="Admin_YesNoQuestions" xml:space="preserve">
+		<value>Ano/ne otázky</value>
+	</data>
+	<data name="Admin_EditQuestions" xml:space="preserve">
+		<value>Úprava formuláře</value>
+	</data>
+	<data name="Admin_ClickToCancelChangesQuestion" xml:space="preserve">
+		<value>Zrušit změny</value>
+	</data>
+	<data name="Admin_QuestionUpdated" xml:space="preserve">
+		<value>Text otázky byl úpěšně změněn</value>
+	</data>
+	<data name="Admin_QuestionDeleted" xml:space="preserve">
+		<value>Otázka byla úspěšně smazána</value>
+	</data>
+	<data name="Admin_UniqueLinkInfo" xml:space="preserve">
+		<value>Tento odkaz je třeba dát hostům Vaší restaurace. Na této adrese se nachází hodnotící formulář Vaší restaurace.</value>
+	</data>
+	<data name="General_Yes" xml:space="preserve">
+		<value>Ano</value>
+	</data>
+	<data name="General_No" xml:space="preserve">
+		<value>Ne</value>
+	</data>
+	<data name="HomePage_RememberLogin" xml:space="preserve">
+		<value>Přihlásit se trvale na tomto počítači</value>
+	</data>
+	<data name="Admin_EditForm_SelectLanguage" xml:space="preserve">
+		<value>Zvolte jazykovou verzi formuláře, kterou </value>
+	</data>
+	<data name="Language_cs" xml:space="preserve">
+		<value>čeština</value>
+	</data>
+	<data name="Language_en" xml:space="preserve">
+		<value>angličtina</value>
+	</data>
+	<data name="Language_de" xml:space="preserve">
+		<value>němčina</value>
+	</data>
+	<data name="Admin_FormStep" xml:space="preserve">
+		<value>Krok</value>
+	</data>
+	<data name="Admin_SaveFormStep" xml:space="preserve">
+		<value>Uložit texty tohoto kroku</value>
+	</data>
+	<data name="FormStepType_PercentQuestions_Description" xml:space="preserve">
+		<value>V tomto kroku bude host dotázán na otázky s možnosti odpovědi na škále od 0 do 100%. Odpovídá se pomocí posuvníku. Typicky počet otázek v tomto kroku je 1 nebo 3. Pokud je zobrazena pouze 1 otázka, tak se zobrazí větší posuvník s vysvětlivkami. Tento krok s jednou otázkou je tedy vhodné použít jako první.</value>
+	</data>
+	<data name="FormStepType_Confirmation_Description" xml:space="preserve">
+		<value>V tomto kroku bude hostu zobrazena závěrečná informace (typicky poděkování) a po kliku na tlačítko bude dotazník spuštěn znovu.</value>
+	</data>
+	<data name="FormStepType_TextQuestion_Description" xml:space="preserve">
+		<value>V tomto kroku bude mít host možnost vyplnit textové informace. Pomocí tohoto kroku je možné se hosta zeptat na otázku typu "Jak se ještě můžeme zlepšit?" anebo na kontaktní údaje.</value>
+	</data>
+	<data name="FormStepType_YesNoQuestions_Description" xml:space="preserve">
+		<value>Na otázky v tomto kroku lze odpovídat pouze ANO nebo NE. Doporučený počet zobrazených otázek v tomto kroku je 5.</value>
+	</data>
+	<data name="Admin_ClickToMoveDownQuestion" xml:space="preserve">
+		<value>Posunout otázku dolů</value>
+	</data>
+	<data name="Admin_ClickToMoveUpQuestion" xml:space="preserve">
+		<value>Posunout otázku nahoru</value>
+	</data>
+	<data name="Admin_ClickToDeleteFormStep" xml:space="preserve">
+		<value>Smazat krok formuláře</value>
+	</data>
+	<data name="Admin_ClickToMoveDownFormStep" xml:space="preserve">
+		<value>Posunout tento krok formuláře níž</value>
+	</data>
+	<data name="Admin_ClickToMoveUpFormStep" xml:space="preserve">
+		<value>Posunout tento krok formuláře výš</value>
+	</data>
+	<data name="Admin_ConfirmDeleteFormStep" xml:space="preserve">
+		<value>Opravdu chcete smazat tento krok dotazníku? Tato operace je nevratná</value>
+	</data>
+	<data name="Admin_EditForm_TitleText" xml:space="preserve">
+		<value>Titulek</value>
+	</data>
+	<data name="Admin_EditForm_ConfirmationText" xml:space="preserve">
+		<value>Text</value>
+	</data>
+	<data name="Admin_EditForm_SubmitButtonText" xml:space="preserve">
+		<value>Text na potvrzovacím tlačítku</value>
+	</data>
+	<data name="FormStepType_TextInfo_Description" xml:space="preserve">
+		<value>V tomto kroku bude hostu zobrazena staticka informace. Je ho tedy vhodné použít na začátku, jako úvod do dotazníku.</value>
+	</data>
+	<data name="Admin_FormStepChanged" xml:space="preserve">
+		<value>Texty tohoto kroku v aktuálně vybraném jazyce byly uloženy</value>
+	</data>
+	<data name="Admin_NumberOfDisplayedQuestions" xml:space="preserve">
+		<value>Počet zobrazených otázek</value>
+	</data>
+	<data name="Admin_CreateFormStep" xml:space="preserve">
+		<value>Přidat krok dotazníku</value>
+	</data>
+	<data name="Admin_NewFormStepCaption" xml:space="preserve">
+		<value>Vyberte typ kroku, který chcete přidat ...</value>
+	</data>
+	<data name="FormStepType_YesNoQuestions" xml:space="preserve">
+		<value>Ano/Ne otázky</value>
+	</data>
+	<data name="FormStepType_PercentQuestions" xml:space="preserve">
+		<value>Otázky s posuvníkem</value>
+	</data>
+	<data name="FormStepType_TextQuestion" xml:space="preserve">
+		<value>Textová otázka</value>
+	</data>
+	<data name="FormStepType_TextInfo" xml:space="preserve">
+		<value>Informace pro hosta</value>
+	</data>
+	<data name="FormStepType_Confirmation" xml:space="preserve">
+		<value>Ukončení formuláře</value>
+	</data>
+	<data name="Admin_FormStepErrorOnSave" xml:space="preserve">
+		<value>Při ukládání kroku došlo k chybě. Je možné, že změny byly uloženy pouze částečně. Obnovte prosím stránku a zkuste provést změny ještě jednou.</value>
+	</data>
+	<data name="Form_IntroFormStep_SubmitButtonText" xml:space="preserve">
+		<value>Pokračovat</value>
+	</data>
+	<data name="Form_IntroFormStep_TitleText" xml:space="preserve">
+		<value>{0} Vás vítá!</value>
+	</data>
+	<data name="Form_IntroFormStep_InfoText" xml:space="preserve">
+		<value>Vážení hosté, budeme rádi, pokud nám sdělíte dojmy z Vaší dnešní návštěvy. Vaše názory jsou pro nás velice cenné a na jejich základě budeme dále zlepšovat naše služby. Odpovědi jsou anonymní a jdou přímo majiteli! Děkujeme!</value>
+	</data>
+	<data name="Form_TextQuestionFormStep_SubmitButtonText" xml:space="preserve">
+		<value>Dokončit</value>
+	</data>
+	<data name="Form_TextQuestionFormStep_TitleText" xml:space="preserve">
+		<value>Jak ještě se můžeme zlepšit?</value>
+	</data>
+	<data name="Form_TextQuestionFormStep_InfoText" xml:space="preserve">
+		<value>Své názory můžete vložit do pole níže.</value>
+	</data>
+	<data name="Form_ConfirmationFormStep_TitleText" xml:space="preserve">
+		<value>Děkujeme!</value>
+	</data>
+	<data name="Form_ConfirmationFormStep_InfoText" xml:space="preserve">
+		<value>Velice si vážíme Vaší pomoci</value>
+	</data>
+	<data name="Admin_ClickToEditLanguages" xml:space="preserve">
+		<value>Editovat jazyky, ve kterých bude formulář dostupný</value>
+	</data>
+	<data name="Admin_NewLanguageCaption" xml:space="preserve">
+		<value>Vyberte jazyk, který chcete přidat ...</value>
+	</data>
+	<data name="Admin_AddLanguage" xml:space="preserve">
+		<value>Přidat jazyk</value>
+	</data>
+	<data name="Admin_ClickToDeleteLanguage" xml:space="preserve">
+		<value>Odebrat</value>
+	</data>
+	<data name="Language_fr" xml:space="preserve">
+		<value>francouzština</value>
+	</data>
+	<data name="Language_pl" xml:space="preserve">
+		<value>polština</value>
+	</data>
+	<data name="Language_sk" xml:space="preserve">
+		<value>slovenština</value>
+	</data>
+	<data name="Language_ru" xml:space="preserve">
+		<value>ruština</value>
+	</data>
+	<data name="Admin_ClickToCancelLanguageChanges" xml:space="preserve">
+		<value>Zrušit změny</value>
+	</data>
+	<data name="Admin_ClickToSaveLanguages" xml:space="preserve">
+		<value>Uložit</value>
+	</data>
+	<data name="FormStepType_LanguageSelection" xml:space="preserve">
+		<value>Výběr jazyka</value>
+	</data>
+	<data name="FormStepType_LanguageSelection_Description" xml:space="preserve">
+		<value>Na tomto kroku si bude moct host vybrat v jakém jazyce budou zobrazeny texty formuláře. Na výběr budou jazyky specifikované v horní části této editační stránky. Tento krok je vhodné umístit jako první.</value>
+	</data>
+	<data name="Form_LanguageSelectionFormStep_TitleText" xml:space="preserve">
+		<value>Vyberte Váš jazyk</value>
+	</data>
+	<data name="Admin_OverallResults" xml:space="preserve">
+		<value>Odpovědi hostů (všechny)</value>
+	</data>
+	<data name="Admin_OverallTextAnswers" xml:space="preserve">
+		<value>Všechny textové odpovědi</value>
+	</data>
+	<data name="Admin_OverallNoTextAnswers" xml:space="preserve">
+		<value>Zatím nebyly odeslané žádné textové odpovědi</value>
+	</data>
+	<data name="Admin_NoNextDay" xml:space="preserve">
+		<value>Nelze přepnout na další den</value>
+	</data>
+	<data name="Admin_FormAvailableInLanguages" xml:space="preserve">
+		<value>Formulář je dostupný ve {0} jazykových verzích</value>
+	</data>
+	<data name="Admin_EditingFormInLanguage" xml:space="preserve">
+		<value>Aktuálně editujete jazykovou verzi</value>
+	</data>
+</root>

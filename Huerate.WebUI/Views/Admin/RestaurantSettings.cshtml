@@ -1,0 +1,33 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using Huerate.WebUI.HtmlHelpers
+@model Huerate.WebViewModels.Admin.RestaurantInfoSettingsModel
+@{
+    ViewBag.Title = Html.Tr("General_RestaurantAdministration") + " " + ViewBag.CurrentUser.DisplayName;
+    Layout = "../Layout/_AdminLayout.cshtml";
+}
+
+<div class="admincontent-wrapper">
+    <fieldset>
+        <legend>@Html.Tr("Admin_RestaurantInfoSettingsLegend")</legend>
+        
+        @using(Html.BeginForm("RestaurantSettings", "Admin"))
+        {
+            @Html.LabelFor(m => m.DisplayName, Html.Tr("Admin_RestaurantInfoDisplayName"))
+            <span class="form-field-info">@Html.Tr("Admin_RestaurantInfoDisplayNameInfo")</span>
+            @Html.EditorFor(m => m.DisplayName)
+
+            @Html.LabelFor(m => m.CodeName, Html.Tr("Admin_RestaurantInfoCodeName"))
+            <span class="form-field-info">@Html.Tr("Admin_RestaurantInfoCodeNameInfo")</span>
+            @Html.EditorFor(m => m.CodeName)
+        
+            <input type="submit" value="@Html.Tr("Admin_ChangeRestaurantInfoButton")" />
+        }
+    </fieldset>
+</div>

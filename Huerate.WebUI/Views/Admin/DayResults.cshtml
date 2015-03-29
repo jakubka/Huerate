@@ -1,0 +1,76 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using System.Globalization
+@using Huerate.WebUI.HtmlHelpers
+@model Huerate.WebViewModels.Admin.DayResultsModel
+
+@{
+    Layout = "~/Views/Admin/Results.cshtml";
+}
+
+@{
+    CultureInfo currentCulture = new CultureInfo(ViewBag.CurrentLanguage);
+
+    string longDatePattern = currentCulture.DateTimeFormat.LongDatePattern;
+}
+
+@section Navigation 
+{
+    <div class="date-nav">
+        <span class="results-day">@Model.Day.ToString(longDatePattern, currentCulture)</span>
+        <ul>
+            @{
+                string prevDayTitle = string.Format(Html.Tr("NextDayTooltip"), Model.Day.AddDays(-1).ToString(longDatePattern, currentCulture));
+                string nextDayTitle = string.Format(Html.Tr("NextDayTooltip"), Model.Day.AddDays(1).ToString(longDatePattern, currentCulture));
+            }
+
+            <li>@Html.ActionLink(Html.Tr("PrevDay"), "Index", new {day = (Model.DayModifier - 1)}, new {@class = "prevmonth", title = prevDayTitle})</li>
+
+            @if (Model.DayModifier < 0)
+            {
+                <li>@Html.ActionLink(Html.Tr("NextDay"), "Index", new {day = (Model.DayModifier + 1)}, new {@class = "nextmonth", title = nextDayTitle})</li>
+            }
+            else
+            {
+                <li><a href="#" class="nextmonth disabled" title="@Html.Tr("Admin_NoNextDay")">Html.Tr("Admin_NoNextDay")</a></li>
+            }
+        </ul>
+    </div>
+}
+
+@section Results
+{
+    @foreach (var q in Model.Questions)
+    {
+        @Html.Partial("QuestionPartial", q)
+    }
+
+    <div class="text-answers">
+        @if (Model.TextAnswers.Any())
+        {
+            <h3>@Html.TrFormat("Admin_DayTextAnswers", Model.Day.ToString(longDatePattern, currentCulture)):</h3>
+            <ul>
+                @{
+                    string timePattern = currentCulture.DateTimeFormat.ShortTimePattern;
+                }
+
+                @foreach (var textAnswer in Model.TextAnswers)
+                {
+                    <li>
+                        <b>@textAnswer.Created.ToLocalTime().ToString(timePattern, currentCulture)</b>: @textAnswer.TextAnswer
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <i>@Html.TrFormat("Admin_DayNoTextAnswers", Model.Day.ToString(longDatePattern, currentCulture))</i>
+        }
+    </div>
+}

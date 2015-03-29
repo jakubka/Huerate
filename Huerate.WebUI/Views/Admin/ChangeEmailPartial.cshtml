@@ -1,0 +1,23 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using Huerate.WebUI.HtmlHelpers
+@using Huerate.WebViewModels
+@model Huerate.WebViewModels.Admin.ChangeEmailModel
+
+<fieldset>
+    <legend>@Html.Tr("Admin_NewLoginEmailLegend")</legend>
+        
+    @using (Html.BeginForm("ChangeEmail", "Admin"))
+    {
+        @Html.LabelFor(m => m.NewEmail, Html.Tr("Admin_NewLoginEmail"))
+        <span class="form-field-info">@Html.Tr("Admin_NewLoginEmailInfo")</span>
+        @Html.EditorFor(m => m.NewEmail)
+        <input type="submit" value="@Html.Tr("Admin_ChangeEmail")" />
+    }
+</fieldset>

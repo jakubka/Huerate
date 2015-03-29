@@ -1,0 +1,15 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@model Huerate.WebViewModels.Form.FormTextInfoStepModel
+
+<div class="content-wrapper centered">
+    <h1 data-bind="text: trObs('@Model.TitleText')"></h1>
+    <p class="desc" data-bind="text: trObs('@Model.InfoText')"></p>
+    <button class="continuebutton" data-bind="text: trObs('@Model.SubmitButtonText')"></button>
+</div>

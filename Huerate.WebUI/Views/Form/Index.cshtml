@@ -1,0 +1,170 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using Huerate.WebUI.HtmlHelpers
+@using Huerate.WebViewModels.Form  
+@using Newtonsoft.Json
+@model FormModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Hodnocení restaurace @Model.RestaurantAccountDisplayName</title>
+        
+        <meta name="viewport" content="width=device-width" />
+        
+        @Html.Partial("FaviconPartial")
+        <link href="@Url.WebObjectPath("~/Content/Styles/Reset.css")" rel="stylesheet" type="text/css"/>
+        <link href="@Url.WebObjectPath("~/Content/Styles/form.css")" rel="stylesheet" type="text/css"/>
+        
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js" type="text/javascript"> </script>
+        <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js" type="text/javascript"> </script>
+        <script src="@Url.WebObjectPath("~/Content/Scripts/Translator.js")"> </script>
+        <script src="@Url.Action("GetCustomTranslationsScript", "Translation", new {restaurantAccountId = Model.RestaurantAccountId})"> </script>
+
+        <script type="text/javascript">
+            var voteActionUrl = "@Url.Action("Vote", "Answer")";
+
+            var giveTextAnswerActionUrl = "@Url.Action("GiveTextAnswer", "Answer")";
+
+            var globalRestaurantAccountId = @(Model.RestaurantAccountId);
+
+            function FormModel(translator, languages) {
+                var self = this;
+                self.translator = translator;
+
+                self.languages = languages;
+    
+                self.setCurrentLanguage = function(language) {
+                    self.translator.currentFormLanguage(language);
+                    return true;
+                };
+    
+                self.trObs = function(resourceCodeName) {
+                    var obs = ko.observable(translator.getCustomValue(resourceCodeName));
+
+                    translator.currentFormLanguage.subscribe(function() {
+                        obs(translator.getCustomValue(resourceCodeName));
+                    });
+
+                    return obs;
+                };
+            }
+
+            var currentLanguage = '@ViewBag.CurrentLanguage';
+            var languages = @Html.Raw(JsonConvert.SerializeObject(Model.Languages));
+
+            var translator = new Translator(null, customTranslations, currentLanguage);
+
+            var model = new FormModel(translator, languages);
+            
+            $(window).load(function() {
+                ko.applyBindings(model);
+                HP.stepsNav = $('div#steps-wrapper').hpStepNav();
+
+                // Remember defined closures
+                HP.sliders = HP.initializer.sliders();
+                HP.moreinfo = HP.initializer.moreinfo();
+
+                $(".continuebutton, .form-language-selector").click(function () {
+                    HP.stepsNav.forward({
+                        elemsToWaitFor: HP.settings.getUndefinedVal(),
+                        forceStep: true
+                    });
+                });
+
+                // Yes/No
+                $('div.step .yesno').find("input[type='radio']").each(function (idx, element) {
+                    var $element = $(element);
+                    $element.checkboxradio();
+                    $element.bind('change', function (event) {
+                        var $ui = $(event.currentTarget);
+
+                        $.post("/Answer/VoteBool", {
+                            answerSetGuid: HP.sliders.getAnswerSetGuid(),
+                            questionId: $ui.attr('data-question-id'),
+                            value: $ui.val(),
+                            Language: translator.currentFormLanguage()
+                        });
+
+                        $ui.parents('div.yesno-hue').attr('data-completed', 'True');
+
+                        HP.stepsNav.forward({
+                            elemsToWaitFor: ['div.yesno-hue']
+                        });
+                    });
+                });
+                $(".ui-btn-text").each(function(id, textElement) {
+                    var $textElement = $(textElement);
+                    $textElement.data("bind", "text: 'prase'");
+                    ko.applyBindings(model, textElement);
+                });
+                
+                $("div.step").show();
+            });
+            $(document).bind("mobileinit", function() {
+                $.mobile.ajaxLinksEnabled = false;
+                $.mobile.autoInitializePage = false;
+            });
+        </script>
+
+        @*jQuery mobile 1.2.0 RC*@
+        <script src="http://code.jquery.com/mobile/1.2.0-rc.2/jquery.mobile-1.2.0-rc.2.min.js" type="text/javascript"> </script>
+
+        @* MyScripts *@
+        <script src="@Url.WebObjectPath("~/Content/Scripts/hp.js")" type="text/javascript"> </script>
+        <script src="@Url.WebObjectPath("~/Content/Scripts/Helpers/hp.functions.js")" type="text/javascript"> </script>
+        <script src="@Url.WebObjectPath("~/Content/Scripts/Helpers/hp.globals.js")" type="text/javascript"> </script>
+        <script src="@Url.WebObjectPath("~/Content/Scripts/Settings/hp.settings.js")" type="text/javascript"> </script>
+        <script src="@Url.WebObjectPath("~/Content/Scripts/Plugins/jquery.hpstepnav.js")" type="text/javascript"> </script>
+
+        <script src="@Url.WebObjectPath("~/Content/Scripts/Initializer/hp.initializer.js")" type="text/javascript"> </script>
+        <script src="@Url.WebObjectPath("~/Content/Scripts/Initializer/hp.initializer.sliders.js")" type="text/javascript"> </script>
+        <script src="@Url.WebObjectPath("~/Content/Scripts/Initializer/hp.initializer.moreinfo.js")" type="text/javascript"> </script>
+    </head>
+    <body>
+        <div id="main">
+            <div id="banner">
+                <img src="@Url.WebObjectPath("~/Content/Images/Form/bg-rest.jpg")" alt="Restaurace" />
+            </div>
+            <div id="content-wrapper">
+                <div id="steps-wrapper">
+                    <div id="page-switcher">
+                        <span class="back"></span>
+                        <span class="forward"></span>
+                        <span class="percent">0%</span>
+                        <div id="progress-wrapper" class="clear">
+                            <div class="progress"></div>
+                        </div>
+                    </div>
+                    @if (Model.FormSteps == null || Model.FormSteps.Count == 0)
+                    {
+                        @Html.Tr("Form_FormUnderConstruction")
+                    }
+                    else
+                    {
+                        foreach (var formStepModel in Model.FormSteps)
+                        {
+                            <div class="step" data-step-id="@formStepModel.FormStepId">
+                                @Html.Partial(formStepModel.ViewName, formStepModel)
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+
+        @*GA at the ent to make it load faster*@
+        @Html.Partial("GoogleAnalytics")
+    </body>
+</html>

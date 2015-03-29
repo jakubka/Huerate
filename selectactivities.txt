@@ -1,0 +1,10 @@
+USE [HuerateDB]
+GO
+
+
+SELECT 
+	A.Recorded, A.CustomData, A.ContactId, RA.DisplayName, AT.Name
+  FROM [dbo].[Activities] AS A
+  LEFT JOIN ActivityTypes AS AT ON A.ActivityTypeId = AT.Id
+  LEFT JOIN RestaurantAccounts AS RA ON RA.Id = A.LoggedInRestaurantId
+GO

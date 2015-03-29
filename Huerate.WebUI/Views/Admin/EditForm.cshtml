@@ -1,0 +1,203 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using Huerate.Domain.Entities
+@using Huerate.WebUI.HtmlHelpers
+@using Newtonsoft.Json
+@using Newtonsoft.Json.Converters
+@model Huerate.WebViewModels.Admin.EditFormModel
+
+@{
+    ViewBag.Title = Html.Tr("General_RestaurantAdministration") + " " + ViewBag.CurrentUser.DisplayName;
+    Layout = "../Layout/_AdminLayout.cshtml";
+}
+
+@section Script
+{
+    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" type="text/javascript"> </script>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js" type="text/javascript"> </script>
+    <script src="@Url.WebObjectPath("~/Content/Scripts/Admin/EditFormViewModel.js")"></script>
+    <script src="@Url.WebObjectPath("~/Content/Scripts/Translator.js")"></script>
+    <script src="@Url.WebObjectPath("~/Content/Scripts/KnockoutBindings.js")"> </script>
+    <script src="@Url.Action("GetAllScript", "Translation", new {language = ViewBag.CurrentLanguage})"> </script>
+    <script src="@Url.Action("GetCustomTranslationsScript", "Translation")"> </script>
+    <script type="text/javascript">
+        var actions = {
+            deleteQuestion: '@Url.Action("DeleteQuestion", "Admin")',
+            setTranslation: '@Url.Action("SetTranslation", "Translation")',
+            deleteFormStep: '@Url.Action("DeleteFormStep", "Admin")',
+            swapFormStepsOrder: '@Url.Action("SwapFormStepsOrder", "Admin")',
+            swapQuestionsOrder: '@Url.Action("SwapQuestionsOrder", "Admin")',
+            updateNumberOfDisplayedQuestions: '@Url.Action("UpdateNumberOfDisplayedQuestions", "Admin")',
+            createQuestion: '@Url.Action("CreateQuestion", "Admin")',
+            createFormStep: '@Url.Action("CreateFormStep", "Admin")',
+            getCustomTranslations: '@Url.Action("GetCustomTranslations", "Translation")',
+            setLanguages: '@Url.Action("SetLanguages", "Admin")'
+        };
+
+        var currentLanguage = '@ViewBag.CurrentLanguage';
+
+        var translator = new Translator(translations, customTranslations, currentLanguage);
+
+        var aspModel = @Html.Raw(JsonConvert.SerializeObject(Model));
+
+        var model = new EditFormModel(aspModel, translator, actions);
+
+        $(window).load(function() {
+            ko.applyBindings(model);
+
+            var $dialog = $('#language-edit-dialog');
+
+            $dialog.dialog({
+                    autoOpen: false,
+                    height: 400,
+                    width: 600,
+                    modal: true,
+                    buttons: {
+                        '@Html.Tr("Admin_ClickToSaveLanguages")': function() {
+                            model.saveEditedLanguages().done(function() {
+                                $dialog.dialog('close');
+                            });
+                        },
+                        '@Html.Tr("Admin_ClickToCancelLanguageChanges")': function() {
+                            model.cancelEditingLanguages();
+                            $dialog.dialog('close');
+                        }
+                    },
+                    open: function() {
+                        model.initEditing();
+                    }
+                }
+            );
+            $('.edit-languages-btn').click(function() {
+                $dialog.dialog('open');
+            });
+
+        });
+    </script>
+    <script type="text/html" id="question-template">
+        <div class="question-container" data-bind="loadingWhen: isLoading">
+            <input type="text" data-bind="value: text.tr" />
+            <div class="edit-icons">
+                <img data-bind="click: $parent.moveUpQuestion, attr: { title: $root.translator.tr('Admin_ClickToMoveUpQuestion') }, visible: $index() != 0" src="@Url.WebObjectPath("~/Content/Images/Icons/up24.png")" />
+                <img data-bind="click: $parent.moveDownQuestion, attr: { title: $root.translator.tr('Admin_ClickToMoveDownQuestion') }, visible: $index() != $parent.questions().length - 1" src="@Url.WebObjectPath("~/Content/Images/Icons/down24.png")" />
+                <img data-bind="click: $parent.deleteQuestion, attr: { title: $root.translator.tr('Admin_ClickToDeleteQuestion') }" src="@Url.WebObjectPath("~/Content/Images/Icons/delete24.png")" />
+            </div>
+            <div class="clear"></div>
+        </div>
+    </script>
+    
+    <script type="text/html" id="percent-questions-form-step-template">
+        <p><span data-bind="text: $root.translator.tr('Admin_NumberOfDisplayedQuestions')" />: <select data-bind="value: displayQuestionsCount, options: [1,2,3,4,5,6,7,8,9,10]" /></p>
+        <div class="questions" data-bind="template: { name: 'question-template', foreach: questions }" />
+        <div class="create-question" data-bind="click: createQuestion, loadingWhen: isCreatingQuestion" />
+    </script>
+    <script type="text/html" id="yes-no-questions-form-step-template">
+        <p><span data-bind="text: $root.translator.tr('Admin_NumberOfDisplayedQuestions')" />: <select data-bind="value: displayQuestionsCount, options: [1,2,3,4,5,6,7,8,9,10]" /></p>
+        <div class="questions" data-bind="template: { name: 'question-template', foreach: questions }" />
+        <div class="create-question" data-bind="click: createQuestion, loadingWhen: isCreatingQuestion" />
+    </script>
+    <script type="text/html" id="text-question-form-step-template">
+        <label>
+            @Html.Tr("Admin_EditForm_TitleText")
+            <input type="text" data-bind="value: title.tr" />
+        </label>
+        <label>
+            @Html.Tr("Admin_EditForm_ConfirmationText")
+            <textarea data-bind="value: info.tr" />
+        </label>
+        <label>
+            @Html.Tr("Admin_EditForm_SubmitButtonText")
+            <input type="text" data-bind="value: submitButton.tr" />
+        </label>
+    </script>
+    <script type="text/html" id="text-info-form-step-template">
+        <label>
+            @Html.Tr("Admin_EditForm_TitleText")
+            <input type="text" data-bind="value: title.tr" />
+        </label>
+        <label>
+            @Html.Tr("Admin_EditForm_ConfirmationText")
+            <textarea data-bind="value: info.tr" />
+        </label>
+        <label>
+            @Html.Tr("Admin_EditForm_SubmitButtonText")
+            <input type="text" data-bind="value: submitButton.tr" />
+        </label>
+    </script>
+    <script type="text/html" id="confirmation-form-step-template">
+        <label>
+            @Html.Tr("Admin_EditForm_TitleText")
+            <input type="text" data-bind="value: title.tr" />
+        </label>
+        <label>
+            @Html.Tr("Admin_EditForm_ConfirmationText")
+            <textarea data-bind="value: info.tr" />
+        </label>
+    </script>
+    <script type="text/html" id="language-selection-form-step-template">
+        <label>
+            @Html.Tr("Admin_EditForm_TitleText")
+            <input type="text" data-bind="value: title.tr" />
+        </label>
+    </script>
+}
+
+<div id="language-edit-dialog" style="display: none">
+    <table data-bind="foreach: languagesInEditMode">
+        <tr><td data-bind="text: $root.translator.tr('Language_' + $data)"></td><td><button data-bind="click: $root.deleteLanguage, enable: $root.languagesInEditMode().length > 1">@Html.Tr("Admin_ClickToDeleteLanguage")</button></td></tr>
+    </table>
+    <select data-bind="
+    value: newLanguage,
+    options: availableLanguages,
+    optionsCaption: $root.translator.tr('Admin_NewLanguageCaption'),
+    optionsText: function(language) {
+        return $root.translator.tr('Language_' + language);
+    }"></select>
+    <button data-bind="click: addLanguage, enable: newLanguage">@Html.Tr("Admin_AddLanguage")</button>
+</div>
+
+<div class="admincontent-wrapper">
+    <div class="edit-form-wrapper">
+        <h1>@Html.Tr("Update_Form")</h1>
+        <div class="language-selector" data-bind="loadingWhen: isSavingLanguages">
+            @Html.Raw(Html.TrFormat("Admin_FormAvailableInLanguages", "<span data-bind=\"text: languages().length\"></span>")) (<img class="edit-languages-btn" title="@Html.Tr("Admin_ClickToEditLanguages")" src="@Url.WebObjectPath("~/Content/Images/Icons/edit24.png")"/>).
+            @Html.Tr("Admin_EditingFormInLanguage") <select data-bind="value: translator.currentFormLanguage, options: languages, optionsText: function(lang) { return $root.translator.tr('Language_' + lang); }"></select>.
+        </div>
+        <div data-bind="foreach: formSteps">
+            <div class="form-step" data-bind="loadingWhen: isLoading() || $root.isChangingLanguage()">
+                <div class="heading">
+                    <h2>@Html.Tr("Admin_FormStep") <span data-bind="text: $index() + 1"></span>: <span data-bind="text: displayName"></span></h2>
+                    <div class="form-step-icons">
+                        <img data-bind="attr: { title: description }" style="cursor: auto" src="@Url.WebObjectPath("~/Content/Images/Icons/info26.png")" />
+                        <img data-bind="click: $parent.moveUpFormStep, attr: { title: $root.translator.tr('Admin_ClickToMoveUpFormStep') }, visible: $index() != 0" src="@Url.WebObjectPath("~/Content/Images/Icons/up24.png")" />
+                        <img data-bind="click: $parent.moveDownFormStep, attr: { title: $root.translator.tr('Admin_ClickToMoveDownFormStep') }, visible: $index() != $parent.formSteps().length - 1" src="@Url.WebObjectPath("~/Content/Images/Icons/down24.png")" />
+                        <img data-bind="click: $parent.deleteFormStep, attr: { title: $root.translator.tr('Admin_ClickToDeleteFormStep') }" src="@Url.WebObjectPath("~/Content/Images/Icons/delete24.png")" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!-- ko if: getTemplateName() != null -->
+                <div data-bind="template: { name: getTemplateName }"></div>
+                <button data-bind="click: saveAll">@Html.Tr("Admin_SaveFormStep")</button>
+                <div class="clear"></div>
+                 <!-- /ko -->
+            </div>
+        </div>
+        <div class="add-form-step" data-bind="loadingWhen: isCreatingFormStep">
+            <select data-bind="
+    value: newFormStepType, 
+    options: formStepTypes,
+    optionsCaption: $root.translator.tr('Admin_NewFormStepCaption'),
+    optionsText: function(formStepType) {
+        return $root.translator.tr('FormStepType_' + formStepType);
+    }"></select>
+            <button data-bind="click: createFormStep, enable: newFormStepType">@Html.Tr("Admin_CreateFormStep")</button>
+        </div>
+    </div>
+</div>

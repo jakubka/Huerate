@@ -1,0 +1,63 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using Huerate.WebUI.HtmlHelpers
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@ViewBag.Title</title>
+        
+        <meta name="viewport" content="width=device-width" />
+
+        @Html.Partial("FaviconPartial")
+        <link href="@Url.WebObjectPath("~/Content/Styles/Reset.css")" rel="stylesheet" type="text/css">
+        <link href="@Url.WebObjectPath("~/Content/Styles/home-page.css")" rel="stylesheet" type="text/css"/>
+    
+        <script src="@Url.WebObjectPath("~/Content/Scripts/ThirdParty/jquery-1.7.2.min.js")"> </script>
+        <script src="@Url.WebObjectPath("~/Content/Scripts/ThirdParty/jquery.unobtrusive-ajax.min.js")"> </script>
+        <script src="@Url.WebObjectPath("~/Content/Scripts/Plugins/jquery.hppopup.js")"> </script>
+
+        @Html.Partial("GoogleAnalytics")
+    </head>
+    <body>
+        <div class="wrapper-all">
+            <div id="header-strip">
+                <div class="main-wrapper">
+                    @if (ViewBag.OnPageTitle != null)
+                    {
+                        <h1>@Html.ActionLink("Huerate", "Index", "HomePage") / @ViewBag.OnPageTitle</h1>
+                    }
+                    <a class="mail" href="mailto:info@huerate.cz">info@huerate.cz</a>
+                    @if (ViewBag.CurrentUser == null)
+                    {
+                        @Html.ActionLink(Html.Tr("General_LogIn"), "SignIn", "HomePage", null, new {@class = "button-white"})
+                    }
+                    else
+                    {
+                        @Html.ActionLink(Html.Tr("Action_EnterAdmin"), "Index", "Admin", null, new {@class = "button-white"})
+                        @Html.ActionLink(Html.Tr("Action_Logout"), "LogOut", "Account", new {redirect = Request.Url.ToString()}, new {@class = "button-white"})
+                    }
+                </div>
+            </div>
+            @RenderBody()
+            <div id="footer-strip">
+                <div class="main-wrapper">
+                    @Html.ActionLink(Html.Tr("Admin_Help"), "Help", "HomePage")
+                    |
+                    <a class="mail" href="mailto:info@huerate.cz">info@huerate.cz</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

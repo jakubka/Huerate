@@ -1,0 +1,79 @@
+﻿/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+
+@import "../shared/common",
+		"../compass/border-radius",
+		"../compass/box-shadow";
+
+// headers
+h1 {
+	font-size: 72 / $defaultFontSize * 1em;
+}
+h2 {
+	font-size: 65 / $defaultFontSize * 1em;
+}
+
+// forms
+form {
+	
+
+	fieldset {
+		label {
+			display: inline-block;
+			color: #4e4946;
+			margin-bottom: 0.5em;
+			font-family: 'LiberationSerifBoldItalic';
+		}
+
+		.hint {
+			display: block;
+			float: right;
+			font-size: 92%;
+			color: #948d89;
+		}
+
+		input[type=text],
+		input[type=password],
+		input[type=email] {
+			width: 92%;
+			height: 52 / $defaultFontSize * 1em;
+			background-color: #f6f6f6;
+			border: none;
+			border-bottom: solid 1px #d4d4d4;
+			margin-bottom: 2em;
+			padding: 0 4%;
+
+			@include border-radius(5px);
+			@include box-shadow-in(0px, 1px, 2px, 0px, rgba(0,0,0,.4));
+		}
+
+		input[type=checkbox] {
+			margin-bottom: 2em;
+			padding: 0 4%;
+			margin-left: 5%;
+		}
+
+		input[type=submit] {
+			border: none;
+			margin-bottom: 0;
+
+			@extend .button-red !optional;
+		}
+
+		div.footer {
+			margin-top: 1em;
+			padding-top: 1em;
+			border-top: 1px solid #e0dbd8;
+
+			* {
+				color: #948d89;
+				font-size: 95%;
+			}
+		}
+	}
+}

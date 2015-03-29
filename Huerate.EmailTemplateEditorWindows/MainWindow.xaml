@@ -1,0 +1,21 @@
+﻿<Window x:Class="Huerate.EmailTemplateEditorWindows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="354.524" Width="593.863">
+    <Grid>
+        <TextBox x:Name="txtCodeName" Height="23" Margin="10,32,354,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtLanguage" Height="23" Margin="0,32,90,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="259"/>
+        <Label Content="Language:" Margin="0,6,285,0" VerticalAlignment="Top" RenderTransformOrigin="-0.388,0.381" HorizontalAlignment="Right" Width="64"/>
+        <TextBox x:Name="txtSubject" Height="23" Margin="62,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Content="Subject:" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.388,0.381"/>
+        <Label Content="Code name:" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.388,0.381"/>
+        <Button Content="Load" Margin="0,31,10,0" VerticalAlignment="Top" Height="24" HorizontalAlignment="Right" Width="75" Click="Button_Click"/>
+        <Label Content="Html text:" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtHtmlText" HorizontalAlignment="Left" Margin="10,119,0,35" TextWrapping="Wrap" Width="300" AcceptsReturn="True" AcceptsTab="True"/>
+        <Label Content="Plain text:" HorizontalAlignment="Left" Margin="315,88,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPlainText" Margin="315,119,10,35" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True"/>
+        <Button Content="Save" Margin="0,0,10,10" Click="Button_Click_1" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
+        <TextBox x:Name="txtConnectionString" Margin="10,0,90,7" TextWrapping="Wrap" Text="Server=localhost;Database=HuerateDB-new;Integrated Security=True;" Height="23" VerticalAlignment="Bottom"/>
+
+    </Grid>
+</Window>

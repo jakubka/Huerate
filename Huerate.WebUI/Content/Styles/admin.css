@@ -1,0 +1,681 @@
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+@font-face {
+  font-family: 'LiberationSerifRegular';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/LiberationSerif-Regular.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'LiberationSerifBold';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/LiberationSerif-Bold.ttf");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'LiberationSerifBoldItalic';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/LiberationSerif-BoldItalic.ttf");
+  font-weight: bold; }
+
+@font-face {
+  font-family: 'LiberationSerifItalic';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/LiberationSerif-Italic.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: 'OpenSansRegular';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/OpenSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'OpenSansLight';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/OpenSans-Light.ttf");
+  font-weight: 200;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'OpenSansBold';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/OpenSans-Bold.ttf");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'OpenSansExtraBold';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/OpenSans-ExtraBold.ttf");
+  font-weight: 900;
+  font-style: normal; }
+
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+.clear {
+  clear: both; }
+
+.hidden {
+  display: none; }
+
+strong {
+  font-weight: bold; }
+
+a {
+  text-decoration: underline;
+  color: #f04400; }
+  a:hover, a:focus {
+    text-decoration: none; }
+
+a.flip-underline {
+  text-decoration: none; }
+  a.flip-underline:hover, a.flip-underline:focus {
+    text-decoration: underline; }
+
+a.no-underline, .button, .button-red, input[type="submit"], div.edit-form-wrapper button, .button-white, div#header ul li.logout a, div.navigation-wrapper ul li a {
+  text-decoration: none; }
+  a.no-underline:hover, .button:hover, .button-red:hover, input[type="submit"]:hover, div.edit-form-wrapper button:hover, .button-white:hover, div#header ul li.logout a:hover, div.navigation-wrapper ul li a:hover, a.no-underline:focus, .button:focus, .button-red:focus, input[type="submit"]:focus, div.edit-form-wrapper button:focus, .button-white:focus, div#header ul li.logout a:focus, div.navigation-wrapper ul li a:focus {
+    text-decoration: none; }
+
+.button, .button-red, input[type="submit"], div.edit-form-wrapper button, .button-white, div#header ul li.logout a {
+  -moz-border-radius: 1.875em;
+  -webkit-border-radius: 1.875em;
+  border-radius: 1.875em;
+  -moz-box-shadow: inset 0px 1px 0px 0 white;
+  -webkit-box-shadow: inset 0px 1px 0px 0 white;
+  box-shadow: inset 0px 1px 0px 0 white;
+  -moz-box-shadow: 0px 1px 0px 0 rgba(100, 95, 91, 0.3);
+  -webkit-box-shadow: 0px 1px 0px 0 rgba(100, 95, 91, 0.3);
+  box-shadow: 0px 1px 0px 0 rgba(100, 95, 91, 0.3);
+  font-family: 'OpenSansRegular';
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8125em;
+  padding: 0.3125em 1em; }
+  .button:focus, .button-red:focus, input[type="submit"]:focus, div.edit-form-wrapper button:focus, .button-white:focus, div#header ul li.logout a:focus, .button:hover, .button-red:hover, input[type="submit"]:hover, div.edit-form-wrapper button:hover, .button-white:hover, div#header ul li.logout a:hover {
+    -moz-border-radius: 1.875em;
+    -webkit-border-radius: 1.875em;
+    border-radius: 1.875em; }
+
+.button-large {
+  font-family: 'OpenSansBold';
+  font-size: 1.0625em;
+  padding: 0.75em 1.875em; }
+
+.button-medium {
+  font-family: 'OpenSansBold';
+  font-size: 0.875em;
+  padding: 0.5em 1.625em; }
+
+.button-red, input[type="submit"], div.edit-form-wrapper button {
+  background-color: #f04400;
+  color: white; }
+  .button-red:disabled, input[type="submit"]:disabled, div.edit-form-wrapper button:disabled {
+    background-color: #606060; }
+
+.button-white, div#header ul li.logout a {
+  background: #d7ccc5;
+  /* Old browsers */
+  background: -moz-linear-gradient(bottom, #e7e4e1 0em, white 100%);
+  /* FF3.6+ */
+  /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d7ccc5), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(bottom, #e7e4e1 0em, white 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(bottom, #e7e4e1 0em, white 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(bottom, #e7e4e1 0em, white 100%);
+  /* IE10+ */
+  background: linear-gradient(bottom, #e7e4e1 0em, white 100%);
+  /* W3C */ }
+
+table {
+  width: 100%;
+  color: #000;
+  font-size: 0.9375em; }
+  table td {
+    padding-top: 0.625em;
+    padding-bottom: 0.625em;
+    border-bottom: 1px solid #e7e2de; }
+  table td.main {
+    font-size: 1.125em;
+    font-family: 'LiberationSerif'; }
+  table td.grey {
+    color: #7c7c7c; }
+  table td:last-child {
+    text-align: right; }
+
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+h1 {
+  font-size: 4.5em;
+  font-family: "LiberationSerifBoldItalic"; }
+
+h2 {
+  font-size: 2.1875em;
+  font-family: "LiberationSerif"; }
+
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+div.wrapper-all {
+  width: 61.875%;
+  background: #91847e;
+  overflow: hidden;
+  margin: 0 auto; }
+  div.wrapper-all #header {
+    background: #fff;
+    padding-right: 4.44444%;
+    padding-left: 0.88889%; }
+  div.wrapper-all div.navigation-wrapper {
+    width: 18.38384%;
+    float: left; }
+  div.wrapper-all div.content-wrapper {
+    width: 72.72727%;
+    padding-left: 4.44444%;
+    padding-right: 4.44444%;
+    float: right;
+    background: #fff; }
+    div.wrapper-all div.content-wrapper h1 {
+      font-family: 'OpenSansBold';
+      font-size: 1.875em; }
+    div.wrapper-all div.content-wrapper h2 {
+      font-family: 'OpenSansBold';
+      font-size: 1.25em;
+      margin: 35px 0 7px 0; }
+
+@media all and (max-width: 1400px) {
+  div.wrapper-all {
+    width: 80%; } }
+@media all and (max-width: 1100px) {
+  div.wrapper-all {
+    width: 100%; } }
+@media all and (max-width: 680px) {
+  div.wrapper-all div.navigation-wrapper {
+    float: none;
+    width: 100%; }
+    div.wrapper-all div.navigation-wrapper ul {
+      padding-top: 1em;
+      padding-bottom: 1em; }
+      div.wrapper-all div.navigation-wrapper ul li a {
+        padding: 0.5em; }
+  div.wrapper-all div.content-wrapper {
+    float: none;
+    width: 98%;
+    clear: both;
+    padding: 1.5em 1% 0 1%; } }
+@media all and (max-width: 680px) and (min-width: 500px) {
+  div.wrapper-all div.navigation-wrapper ul {
+    padding-top: 1em;
+    padding-bottom: 0; }
+    div.wrapper-all div.navigation-wrapper ul li {
+      float: left;
+      margin-right: .5em; }
+      div.wrapper-all div.navigation-wrapper ul li a {
+        border-bottom: none; } }
+html {
+  height: 100%; }
+
+body {
+  background-color: #fff;
+  color: #5e5e5e;
+  font: normal 100% Cambria, Georgia, serif;
+  font-size: 100%;
+  /* 16px */
+  width: 100%;
+  /* 1600px  */
+  height: 100%;
+  margin: 0;
+  font-family: 'OpenSansRegular';
+  background: #d7ccc5;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d7ccc5 0em, white 34.25em);
+  /* FF3.6+ */
+  /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d7ccc5), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #d7ccc5 0em, white 34.25em);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #d7ccc5 0em, white 34.25em);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #d7ccc5 0em, white 34.25em);
+  /* IE10+ */
+  background: linear-gradient(top, #d7ccc5 0em, white 34.25em);
+  /* W3C */
+  background-repeat: no-repeat; }
+
+/* HEADER */
+div#header {
+  border-bottom: 1px solid #bfbfbf;
+  overflow: hidden;
+  padding-top: 1.5625em;
+  padding-bottom: 1.5625em; }
+  div#header h1 {
+    float: left;
+    font-size: 1.4375em; }
+  div#header ul {
+    float: right; }
+    div#header ul li {
+      display: inline-block; }
+      div#header ul li.logout {
+        padding-left: 1.875em;
+        margin-left: 1.875em;
+        border-left: 1px solid #e7e2de; }
+      div#header ul li a {
+        font-size: 0.8125em; }
+
+/* Message Box */
+div.messagebox-info {
+  background-color: #f6f6f6;
+  border: solid 1px #d5d5d5;
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 14.23659%;
+  padding-right: 2.37276%;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: inset 0 2px 0 0 white;
+  -webkit-box-shadow: inset 0 2px 0 0 white;
+  box-shadow: inset 0 2px 0 0 white; }
+  div.messagebox-info a.qrcode {
+    display: block;
+    float: right;
+    margin-top: 0.4em; }
+    div.messagebox-info a.qrcode img {
+      height: 3em; }
+  div.messagebox-info div.info {
+    width: 9.49106%;
+    background-color: #eeeeee;
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    bottom: 0;
+    border-right: 1px solid #d5d5d5;
+    background: url("http://hueratefiles.blob.core.windows.net/public/Content/Images/Icons/info.png") no-repeat center center; }
+  div.messagebox-info p {
+    display: block;
+    float: left;
+    padding-top: 1.125em;
+    padding-bottom: 1.125em; }
+
+/* Results */
+div.results-wrapper {
+  padding-bottom: 3em; }
+  div.results-wrapper h1 {
+    float: left;
+    margin-bottom: 2em; }
+  div.results-wrapper div.date-nav {
+    float: right;
+    line-height: 2.1em;
+    margin-bottom: 1em;
+    margin-top: .6em; }
+    div.results-wrapper div.date-nav .results-day {
+      font-family: 'OpenSans';
+      font-size: 1.25em;
+      display: inline-block; }
+    div.results-wrapper div.date-nav ul {
+      display: inline-block;
+      margin-left: 0.9375em; }
+      div.results-wrapper div.date-nav ul li {
+        display: inline-block; }
+        div.results-wrapper div.date-nav ul li a {
+          display: block;
+          text-indent: -1000px;
+          overflow: hidden;
+          width: 1.8125em;
+          height: 1.8125em;
+          -moz-border-radius: 0.9375em;
+          -webkit-border-radius: 0.9375em;
+          border-radius: 0.9375em;
+          -webkit-box-shadow: 0 1px #c9c1bb, inset 0 1px #fff;
+          -moz-box-shadow: 0 1px #c9c1bb, inset 0 1px #fff;
+          box-shadow: 0 1px #c9c1bb, inset 0 1px #fff;
+          border: solid 1px #e7e2de;
+          position: relative; }
+          div.results-wrapper div.date-nav ul li a.nextmonth {
+            margin-left: .2em; }
+          div.results-wrapper div.date-nav ul li a:after {
+            content: ' ';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-repeat: no-repeat; }
+          div.results-wrapper div.date-nav ul li a.prevmonth:after {
+            background-position: 47% center;
+            background-image: url("http://hueratefiles.blob.core.windows.net/public/Content/Images/Icons/prev.png"); }
+          div.results-wrapper div.date-nav ul li a.nextmonth:after {
+            background-position: 53% center;
+            background-image: url("http://hueratefiles.blob.core.windows.net/public/Content/Images/Icons/next.png"); }
+          div.results-wrapper div.date-nav ul li a.disabled {
+            opacity: 0.6; }
+  div.results-wrapper div.result-item {
+    border-bottom: 1px solid #e7e2de;
+    padding-top: 0.9375em;
+    padding-bottom: 0.9375em;
+    overflow: hidden;
+    color: #000;
+    clear: both; }
+    div.results-wrapper div.result-item:first-child {
+      border-top: 1px solid #e7e2de; }
+    div.results-wrapper div.result-item h3 {
+      font-size: 1.125em;
+      float: left; }
+    div.results-wrapper div.result-item div.results-numbers-wrapper {
+      float: right;
+      color: #7c7c7c; }
+      div.results-wrapper div.result-item div.results-numbers-wrapper strong {
+        padding-left: 1.25em;
+        margin-left: 1.25em;
+        margin-right: 0.3125em;
+        position: relative;
+        color: #000; }
+        div.results-wrapper div.result-item div.results-numbers-wrapper strong:after {
+          content: ' ';
+          width: 1px;
+          height: 60%;
+          background: #e7e2de;
+          position: absolute;
+          left: 0;
+          top: 20%; }
+  div.results-wrapper hr {
+    border: none;
+    height: 4.375em; }
+  div.results-wrapper div.text-answers {
+    margin-top: 6em; }
+    div.results-wrapper div.text-answers h3 {
+      font-family: 'LiberationSerifRegular';
+      font-size: 1.25em;
+      color: #000;
+      margin-bottom: 1em; }
+    div.results-wrapper div.text-answers ul {
+      color: #000; }
+      div.results-wrapper div.text-answers ul li {
+        border-bottom: 1px solid #e7e2de;
+        padding-top: 0.625em;
+        padding-bottom: 0.625em; }
+        div.results-wrapper div.text-answers ul li b {
+          font-weight: bold; }
+        div.results-wrapper div.text-answers ul li:first-child {
+          border-top: 1px solid #e7e2de; }
+
+/* Help */
+.centered {
+  text-align: center; }
+
+div.admincontent-wrapper {
+  padding-bottom: 40px; }
+  div.admincontent-wrapper h1 {
+    margin-bottom: 20px; }
+  div.admincontent-wrapper h3 {
+    font-size: 1.25em;
+    margin: 10px 0 5px 0;
+    font-weight: bold; }
+  div.admincontent-wrapper p {
+    margin: 6px 0; }
+  div.admincontent-wrapper div.help-wrapper img {
+    margin: 10px 0;
+    border: 1px solid grey;
+    padding: 3px; }
+  div.admincontent-wrapper ul, div.admincontent-wrapper ol {
+    margin: 1.12em 0 1.12em 40px; }
+  div.admincontent-wrapper ul li {
+    list-style-type: circle; }
+  div.admincontent-wrapper ol li {
+    list-style-type: decimal; }
+  div.admincontent-wrapper fieldset {
+    display: block;
+    width: 92.5%;
+    padding: 1em 2em;
+    border: 1px solid #A8A8A8;
+    margin: 1em 0 2em 0; }
+    div.admincontent-wrapper fieldset legend {
+      margin-left: -1em;
+      padding: 2px 5px;
+      background-color: #F2F2F2;
+      border: 1px solid #A8A8A8;
+      font-weight: bold; }
+    div.admincontent-wrapper fieldset label {
+      display: block;
+      margin: 0.3em 0;
+      font-family: 'LiberationSerifBoldItalic';
+      color: #4e4946; }
+    div.admincontent-wrapper fieldset input {
+      display: block; }
+    div.admincontent-wrapper fieldset input[type=text],
+    div.admincontent-wrapper fieldset input[type=password],
+    div.admincontent-wrapper fieldset input[type=email] {
+      margin-bottom: 1em;
+      height: 2em;
+      width: 90%;
+      max-width: 300px;
+      padding: 0.2em 0.5em;
+      background-color: #f6f6f6;
+      border-bottom: solid 1px #d4d4d4; }
+    div.admincontent-wrapper fieldset input[type="submit"] {
+      margin-top: 1.5em; }
+    div.admincontent-wrapper fieldset span.form-field-info {
+      font-family: 'LiberationSerifItalic';
+      font-size: 0.9em;
+      display: block;
+      margin-bottom: 0.3em;
+      margin-top: 0.4em; }
+
+/* Navigation */
+div.navigation-wrapper ul {
+  padding-top: 2em; }
+  div.navigation-wrapper ul li {
+    display: block; }
+    div.navigation-wrapper ul li a {
+      color: #fff;
+      display: block;
+      font-size: 0.875em;
+      border-bottom: 1px solid #a89f9b;
+      padding-top: 1.25em;
+      padding-bottom: 1.25em;
+      padding-left: 10.98901%;
+      padding-right: 5.49451%; }
+    div.navigation-wrapper ul li a:hover, div.navigation-wrapper ul li a.active {
+      color: #f04400;
+      background-color: #fff;
+      border-color: #6f645f; }
+
+div.edit-form-wrapper {
+  text-align: left; }
+  div.edit-form-wrapper p {
+    font-size: 0.85em;
+    font-style: italic; }
+  div.edit-form-wrapper h1 {
+    font-size: 3em;
+    margin: 1em 0 .5em 0;
+    text-align: left; }
+  div.edit-form-wrapper label {
+    display: block;
+    margin: 0.6em 0;
+    font-weight: bold;
+    font-style: italic; }
+    div.edit-form-wrapper label input, div.edit-form-wrapper label textarea {
+      margin-top: 0.3em;
+      display: block;
+      width: 97%;
+      padding: 1%;
+      border: 1px solid #ABADB3; }
+    div.edit-form-wrapper label textarea {
+      height: 6em; }
+  div.edit-form-wrapper div.questions div.question-container {
+    margin: 0.5em 0; }
+    div.edit-form-wrapper div.questions div.question-container input[type="text"] {
+      float: left;
+      width: 97%;
+      display: block;
+      padding: 1%;
+      border: 1px solid #ABADB3;
+      color: black; }
+    div.edit-form-wrapper div.questions div.question-container div.edit-icons {
+      float: right;
+      text-align: right;
+      padding-top: 2px;
+      width: 100px;
+      display: none; }
+      div.edit-form-wrapper div.questions div.question-container div.edit-icons img {
+        cursor: pointer;
+        margin: 0 2%; }
+    div.edit-form-wrapper div.questions div.question-container:hover input[type="text"] {
+      width: 75%; }
+    div.edit-form-wrapper div.questions div.question-container:hover div.edit-icons {
+      display: block; }
+  div.edit-form-wrapper div.create-question {
+    margin: 0.5em 0;
+    padding: 1%;
+    background-image: url("http://hueratefiles.blob.core.windows.net/public/Content/Images/Icons/plus26.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 1em;
+    width: 97%;
+    cursor: pointer;
+    border: 1px solid #ABADB3; }
+    div.edit-form-wrapper div.create-question:hover {
+      border: 1px solid black; }
+  div.edit-form-wrapper div.language-selector {
+    margin: 1.5em 0 2.5em 0; }
+    div.edit-form-wrapper div.language-selector img.edit-languages-btn {
+      cursor: pointer;
+      height: 1em; }
+  div.edit-form-wrapper .loader {
+    background-image: url(data:image/gif;base64,R0lGODlhEAALAPQAAP///0pISOTk5N3d3e/v705MTEpISGpoaKalpY6MjM3NzWJgYH59fauqqpCPj9DQ0GRjY0xKSoF/f+zs7OPi4vb29nFwcOXl5fX19crKyru6utnY2PLy8gAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCwAAACwAAAAAEAALAAAFLSAgjmRpnqSgCuLKAq5AEIM4zDVw03ve27ifDgfkEYe04kDIDC5zrtYKRa2WQgAh+QQJCwAAACwAAAAAEAALAAAFJGBhGAVgnqhpHIeRvsDawqns0qeN5+y967tYLyicBYE7EYkYAgAh+QQJCwAAACwAAAAAEAALAAAFNiAgjothLOOIJAkiGgxjpGKiKMkbz7SN6zIawJcDwIK9W/HISxGBzdHTuBNOmcJVCyoUlk7CEAAh+QQJCwAAACwAAAAAEAALAAAFNSAgjqQIRRFUAo3jNGIkSdHqPI8Tz3V55zuaDacDyIQ+YrBH+hWPzJFzOQQaeavWi7oqnVIhACH5BAkLAAAALAAAAAAQAAsAAAUyICCOZGme1rJY5kRRk7hI0mJSVUXJtF3iOl7tltsBZsNfUegjAY3I5sgFY55KqdX1GgIAIfkECQsAAAAsAAAAABAACwAABTcgII5kaZ4kcV2EqLJipmnZhWGXaOOitm2aXQ4g7P2Ct2ER4AMul00kj5g0Al8tADY2y6C+4FIIACH5BAkLAAAALAAAAAAQAAsAAAUvICCOZGme5ERRk6iy7qpyHCVStA3gNa/7txxwlwv2isSacYUc+l4tADQGQ1mvpBAAIfkECQsAAAAsAAAAABAACwAABS8gII5kaZ7kRFGTqLLuqnIcJVK0DeA1r/u3HHCXC/aKxJpxhRz6Xi0ANAZDWa+kEAA7AAAAAAAAAAAA);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(200, 200, 200, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; }
+  div.edit-form-wrapper .form-step {
+    padding: 1em 0.5em;
+    margin: 1em 0;
+    border: 1px solid #C2BDBD; }
+    div.edit-form-wrapper .form-step div.heading h2 {
+      margin: 0 0 0.5em 0;
+      float: left; }
+    div.edit-form-wrapper .form-step div.heading .form-step-icons {
+      float: right;
+      text-align: right;
+      padding-top: 2px;
+      width: 140px;
+      display: none; }
+      div.edit-form-wrapper .form-step div.heading .form-step-icons img {
+        cursor: pointer;
+        margin: 0 2%; }
+    div.edit-form-wrapper .form-step button {
+      float: right; }
+    div.edit-form-wrapper .form-step:hover {
+      border-color: #7B7A7A; }
+      div.edit-form-wrapper .form-step:hover div.heading .form-step-icons {
+        display: block; }
+  div.edit-form-wrapper .add-form-step {
+    margin-top: 2em; }
+
+.messages {
+  margin: 0.2em 0; }
+  .messages .message {
+    margin: 0.4em 0;
+    color: green;
+    border: 1px solid green;
+    background-color: #C0F4C3;
+    padding: 0.4em 0.6em; }
+

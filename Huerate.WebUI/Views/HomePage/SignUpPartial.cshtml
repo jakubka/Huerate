@@ -1,0 +1,30 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@model Huerate.WebViewModels.SignUpModel
+@using Huerate.WebUI.HtmlHelpers
+
+@using (Html.BeginForm("SignUp", "HomePage"))
+{
+    <fieldset>
+        <legend class="hidden">Sign Up</legend>
+
+        @Html.LabelFor(m => m.DisplayName, Html.Tr("Restaurant_Name"))
+        @Html.TextBoxFor(m => m.DisplayName)
+
+        @Html.LabelFor(m => m.Email, Html.Tr("Restaurant_Email"))
+        @Html.TextBoxFor(m => m.Email)
+
+        @Html.LabelFor(m => m.Password, Html.Tr("Restaurant_Password"))
+        @Html.PasswordFor(m => m.Password)
+
+        @Html.ValidationSummary()
+
+        <input type="submit" value="@Html.Tr("Restaurant_Create")" />
+    </fieldset>
+}

@@ -1,0 +1,16 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using Huerate.WebUI.HtmlHelpers
+
+<div class="content-wrapper">
+    <ul>
+        <li>@Html.ActionLink(Html.Tr("Navigation_Form"), "Index", "Form", new { codeName = ViewBag.CurrentUser.CodeName }, null)</li>
+        <li>@Html.ActionLink(Html.Tr("Action_Logout"), "Logout", "Account")</li>
+    </ul>
+</div>

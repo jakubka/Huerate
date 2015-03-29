@@ -1,0 +1,37 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using Huerate.WebUI.HtmlHelpers
+@model Huerate.WebViewModels.Form.FormYesNoQuestionsStepModel
+
+<div class="yesno">
+    <div class="content-wrapper">
+        @foreach (var question in Model.YesNoQuestions)
+        {
+            <div class="hue yesno-hue">
+                <div class="left" data-bind="text: trObs('@question.QuestionText')"></div>
+                <div class="right">
+                    <div class="yes-no-container">
+                        <fieldset data-role="controlgroup">
+                            <legend style="display: none;"></legend>
+                            <div class="yes-no-no yes-no-button">
+                                <input type="radio" name="yes-no-@question.QuestionId" id="radio-mini-2-@question.QuestionId" value="False" data-question-id="@question.QuestionId">
+                                <label for="radio-mini-2-@question.QuestionId" @*data-bind="text: trObs('Form_No')().toUpperCase()"*@>Ne</label>
+                            </div>
+                            <div class="yes-no-yes yes-no-button">
+                                <input type="radio" name="yes-no-@question.QuestionId" id="radio-mini-1-@question.QuestionId" value="True" data-question-id="@question.QuestionId">
+                                <label for="radio-mini-1-@question.QuestionId" @*data-bind="text: trObs('Form_Yes')().toUpperCase()"*@>Ano</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        }
+    </div>
+</div>

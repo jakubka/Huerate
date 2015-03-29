@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C41FA274-8274-4B4F-A031-33053497E4C9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Huerate.Domain</RootNamespace>
+    <AssemblyName>Huerate.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainException.cs" />
+    <Compile Include="Entities\Activity.cs" />
+    <Compile Include="Entities\ActivityType.cs" />
+    <Compile Include="Entities\Contact.cs" />
+    <Compile Include="Entities\CustomTranslation.cs" />
+    <Compile Include="Entities\EmailTemplate.cs" />
+    <Compile Include="Entities\FormStep.cs" />
+    <Compile Include="Entities\IOrderableEntity.cs" />
+    <Compile Include="Entities\IPrimaryKeyEntity.cs" />
+    <Compile Include="Entities\AnswerSet.cs" />
+    <Compile Include="Entities\NewsletterSubscription.cs" />
+    <Compile Include="Entities\Answer.cs" />
+    <Compile Include="Entities\Question.cs" />
+    <Compile Include="Entities\RestaurantAccount.cs" />
+    <Compile Include="Entities\ScheduledOutgoingEmail.cs" />
+    <Compile Include="HuerateContext.cs" />
+    <Compile Include="HuerateDatabaseInitializer.cs" />
+    <Compile Include="Migrations\201303100437307_InitialCreate.cs" />
+    <Compile Include="Migrations\201303100437307_InitialCreate.Designer.cs">
+      <DependentUpon>201303100437307_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201303101407323_ContactUserAgent.cs" />
+    <Compile Include="Migrations\201303101407323_ContactUserAgent.Designer.cs">
+      <DependentUpon>201303101407323_ContactUserAgent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201303101418320_ScheduledEmailSentFromAddress.cs" />
+    <Compile Include="Migrations\201303101418320_ScheduledEmailSentFromAddress.Designer.cs">
+      <DependentUpon>201303101418320_ScheduledEmailSentFromAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201303142229087_EmailTemplates.cs" />
+    <Compile Include="Migrations\201303142229087_EmailTemplates.Designer.cs">
+      <DependentUpon>201303142229087_EmailTemplates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201303242214107_FormSteps.cs" />
+    <Compile Include="Migrations\201303242214107_FormSteps.Designer.cs">
+      <DependentUpon>201303242214107_FormSteps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304052233196_CustomTranslations.cs" />
+    <Compile Include="Migrations\201304052233196_CustomTranslations.Designer.cs">
+      <DependentUpon>201304052233196_CustomTranslations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304061107117_BetterTextInfoFormStep.cs" />
+    <Compile Include="Migrations\201304061107117_BetterTextInfoFormStep.Designer.cs">
+      <DependentUpon>201304061107117_BetterTextInfoFormStep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304091806220_DisplayNameRemove.cs" />
+    <Compile Include="Migrations\201304091806220_DisplayNameRemove.Designer.cs">
+      <DependentUpon>201304091806220_DisplayNameRemove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304092235240_AnswerLanguage.cs" />
+    <Compile Include="Migrations\201304092235240_AnswerLanguage.Designer.cs">
+      <DependentUpon>201304092235240_AnswerLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304112110067_LanguageSelectionFormStep.cs" />
+    <Compile Include="Migrations\201304112110067_LanguageSelectionFormStep.Designer.cs">
+      <DependentUpon>201304112110067_LanguageSelectionFormStep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304140307068_Languages.cs" />
+    <Compile Include="Migrations\201304140307068_Languages.Designer.cs">
+      <DependentUpon>201304140307068_Languages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304141727454_RequiredFieldsInCustomTranslation.cs" />
+    <Compile Include="Migrations\201304141727454_RequiredFieldsInCustomTranslation.Designer.cs">
+      <DependentUpon>201304141727454_RequiredFieldsInCustomTranslation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304152005364_CascadeDelete.cs" />
+    <Compile Include="Migrations\201304152005364_CascadeDelete.Designer.cs">
+      <DependentUpon>201304152005364_CascadeDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201305250422541_ValueNotRequiredInCustomTranslation.cs" />
+    <Compile Include="Migrations\201305250422541_ValueNotRequiredInCustomTranslation.Designer.cs">
+      <DependentUpon>201305250422541_ValueNotRequiredInCustomTranslation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CustomTranslationEfRepository.cs" />
+    <Compile Include="Repositories\EmailTemplateRepository.cs" />
+    <Compile Include="Repositories\FormStepRepository.cs" />
+    <Compile Include="Repositories\GuidKeyEfRepository.cs" />
+    <Compile Include="Repositories\EfRepositoryBase.cs" />
+    <Compile Include="Repositories\ActivityTypeEfRepository.cs" />
+    <Compile Include="Repositories\IAnswerSetRepository.cs" />
+    <Compile Include="Repositories\IAnswerRepository.cs" />
+    <Compile Include="Repositories\ICustomTranslationRepository.cs" />
+    <Compile Include="Repositories\IEmailTemplateRepository.cs" />
+    <Compile Include="Repositories\IFormStepRepository.cs" />
+    <Compile Include="Repositories\IOrderableRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\IQuestionRepository.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Repositories\IRestaurantAccountRepository.cs" />
+    <Compile Include="Repositories\IntKeyEfRepository.cs" />
+    <Compile Include="Repositories\IScheduledOutgoingEmailRepository.cs" />
+    <Compile Include="Repositories\AnswerSetEfRepository.cs" />
+    <Compile Include="EfUnitOfWork.cs" />
+    <Compile Include="Repositories\AnswerEfRepository.cs" />
+    <Compile Include="Repositories\OrderableRepository.cs" />
+    <Compile Include="Repositories\QuestionEfRepository.cs" />
+    <Compile Include="Repositories\RestaurantAccountEfRepository.cs" />
+    <Compile Include="Repositories\ScheduledOutgoingEmailEfRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Huerate.Configuration\Huerate.Configuration.csproj">
+      <Project>{C8322DE9-7277-45C9-B1A7-3145BCA4B1A3}</Project>
+      <Name>Huerate.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Huerate.Logging\Huerate.Logging.csproj">
+      <Project>{7E96A18F-DF7B-408F-AA3D-A2D4B75EDA2B}</Project>
+      <Name>Huerate.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201303100437307_InitialCreate.resx">
+      <DependentUpon>201303100437307_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303101407323_ContactUserAgent.resx">
+      <DependentUpon>201303101407323_ContactUserAgent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303101418320_ScheduledEmailSentFromAddress.resx">
+      <DependentUpon>201303101418320_ScheduledEmailSentFromAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303142229087_EmailTemplates.resx">
+      <DependentUpon>201303142229087_EmailTemplates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303242214107_FormSteps.resx">
+      <DependentUpon>201303242214107_FormSteps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304052233196_CustomTranslations.resx">
+      <DependentUpon>201304052233196_CustomTranslations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304061107117_BetterTextInfoFormStep.resx">
+      <DependentUpon>201304061107117_BetterTextInfoFormStep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304091806220_DisplayNameRemove.resx">
+      <DependentUpon>201304091806220_DisplayNameRemove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304092235240_AnswerLanguage.resx">
+      <DependentUpon>201304092235240_AnswerLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304112110067_LanguageSelectionFormStep.resx">
+      <DependentUpon>201304112110067_LanguageSelectionFormStep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304140307068_Languages.resx">
+      <DependentUpon>201304140307068_Languages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304141727454_RequiredFieldsInCustomTranslation.resx">
+      <DependentUpon>201304141727454_RequiredFieldsInCustomTranslation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304152005364_CascadeDelete.resx">
+      <DependentUpon>201304152005364_CascadeDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305250422541_ValueNotRequiredInCustomTranslation.resx">
+      <DependentUpon>201305250422541_ValueNotRequiredInCustomTranslation.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

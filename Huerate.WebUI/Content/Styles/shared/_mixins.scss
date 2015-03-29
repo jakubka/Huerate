@@ -1,0 +1,48 @@
+﻿/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+
+@mixin background-gradient($direction, $startPos, $startColor, $endPos, $endColor) {
+	background: #d7ccc5; /* Old browsers */
+	background: -moz-linear-gradient($direction, $startColor $startPos, $endColor $endPos); /* FF3.6+ */
+	/* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d7ccc5), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient($direction, $startColor $startPos,$endColor $endPos); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient($direction, $startColor $startPos,$endColor $endPos); /* Opera 11.10+ */
+	background: -ms-linear-gradient($direction, $startColor $startPos,$endColor $endPos); /* IE10+ */
+	background: linear-gradient($direction, $startColor $startPos, $endColor $endPos); /* W3C */
+	//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=1 ); /* IE6-9 */
+}
+
+@mixin box-shadow-out($off-x, $off-y, $blur-rad, $spread-rad, $color, $inout: outset) {
+	@if ($inout == inset) {
+		-moz-box-shadow: inset $off-x $off-y $blur-rad $spread-rad $color;
+		-webkit-box-shadow: inset $off-x $off-y $blur-rad $spread-rad $color;
+		box-shadow: inset $off-x $off-y $blur-rad $spread-rad $color;	
+	}
+	@else {
+		-moz-box-shadow: $off-x $off-y $blur-rad $spread-rad $color;
+		-webkit-box-shadow: $off-x $off-y $blur-rad $spread-rad $color;
+		box-shadow: $off-x $off-y $blur-rad $spread-rad $color;	
+	}
+}
+
+@mixin box-shadow-in($off-x, $off-y, $blur-rad, $spread-rad, $color, $inout: inset) {
+	@include box-shadow-out($off-x, $off-y, $blur-rad, $spread-rad, $color, $inout);
+}
+
+@mixin background-ico($icoPath, $icoPos, $icoW, $gap) {
+	background-image: url($icoPath);
+	background-repeat: no-repeat;
+	background-position: $icoPos center;
+	padding-#{$icoPos}: $icoW + $gap;
+}
+
+@mixin rounded($radius: $defaultBorderRadius / $defaultFontSize  * 1em) {
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}

@@ -1,0 +1,47 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using Huerate.WebUI.HtmlHelpers
+@model Huerate.WebViewModels.SignInModel
+@{
+    Layout = "~/Views/Layout/_HomePageLayout.cshtml";
+    ViewBag.Title = Html.Tr("SignInPage_Title");
+    ViewBag.OnPageTitle = @Html.Tr("SignInPage_OnPageTitle");
+}
+
+<div class="main-wrapper">
+    <div id="login-container">
+        @using (Html.BeginForm("SignIn", "HomePage"))
+        {
+            <fieldset>
+                <legend class="hidden">@Html.Tr("Action_LogIn"))</legend>
+
+                @Html.LabelFor(m => m.CodeNameOrEmail, Html.Tr("General_Email_Address"))
+                @Html.EditorFor(m => m.CodeNameOrEmail, new {tabindex = 1})
+
+                
+                @Html.LabelFor(m => m.Password, Html.Tr("General_Password"))
+                @Html.EditorFor(m => m.Password, new {tabindex = 2})
+                
+                @Html.LabelFor(m => m.RememberMe, Html.Tr("HomePage_RememberLogin"))
+                @Html.EditorFor(m => m.RememberMe, new {tabindex = 3})
+                
+            
+                @Html.ValidationSummary() 
+            
+                <input type="submit" value="@Html.Tr("General_LogIn")" tabindex="4" class="submit" />
+
+                <div class="footer">
+                    @Html.ActionLink(Html.Tr("Lost_Password"), "LostPassword", "HomePage", null, new {tabindex = 5})
+                    |
+                    @Html.ActionLink(Html.Tr("Restaurant_Create"), "SignUp", "HomePage", null, new {tabindex = 6})
+                </div>
+            </fieldset>
+        }
+    </div>
+</div>

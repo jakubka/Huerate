@@ -1,0 +1,21 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using Huerate.WebUI.HtmlHelpers
+
+<fieldset>
+    <legend>@Html.Tr("Admin_DeleteAccountLegend")</legend>
+        
+    <i>@Html.Tr("Admin_DeleteAccountDisclaimer")</i>
+
+    @using (Html.BeginForm("DeleteAccount", "Admin"))
+    {
+        string confirmText = Html.Tr("Admin_ConfirmAccountDelete");
+        <input type="submit" value="@Html.Tr("Admin_DeleteAccountButton")" onclick=" return confirm('@confirmText'); " />
+    }
+</fieldset>

@@ -1,0 +1,27 @@
+﻿<p>Dobrý den,</p>
+ 
+<p>jmenuji se Jakub Kadlubiec a jsem studentem pátého ročníku Fakulty Informačních Technologií na VUT v Brně.</p>
+ 
+<p>Rád bych Vás tímto požádal o pomoc s mou diplomovou prací.</p>
+ 
+<p>Jako diplomovou práci tvořím službu pro restaurace pro sběr názorů a zpětné vazby hostů pomocí mobilních telefonů. Cílem je, aby vedení restaurace zjistilo, co hostům vadí a co se jim líbí. Na základě těchto informací je pak možné zlepšit služby v těch nejdůležitějších oblastech a tím nalákat více návštěvníků.</p>
+ 
+<p>Obracím se na Vás se dvěma prosbami:
+<ol>
+<li>Velmi mě zajímá Váš názor jakožto potencionálního uživatele služby, a proto bych Vás rád poprosil o vyplnění krátkého dotazníku. Na základě výsledků budu dále směřovat svou práci. Vyplnění dotazníku zabere 5-10 minut. Najdete ho na adrese:
+<a href="https://docs.google.com/forms/d/1RlOgza42drfOLIrZ6XOSBqRcr78XScnRDd2AjtQohpI/viewform">https://docs.google.com/forms/d/1RlOgza42drfOLIrZ6XOSBqRcr78XScnRDd2AjtQohpI/viewform</a>
+</li> 
+<li>Rád bych Vám nabídnul spolupráci ve formě zkušebního provozu ve Vaší restauraci zdarma. Další informace o tom, jak to vlastně funguje, a jak to můžete vyzkoušet, najdete níže v tomto mailu.</li>
+</ol>
+ 
+<p>V systému Huerate (název mé diplomové práce) hosté odesílají zpětnou vazbu majiteli restaurace pomocí svých mobilních telefonů. V restauraci se umístí na stoly (například do jídelního lístku nebo jako samostatné letáky) www adresu. Host si tuto adresu otevře ve svém telefonu, zobrazí se mu dotazník a vyplní informace, které chce sdělit majiteli. Host pro vyplnění dotazníku potřebuje chytrý telefon.</p>
+ 
+<p>Pokud máte jakékoliv dotazy ohledně fungování služby, tak mě neváhejte kontaktovat na jakub@huerate.cz.</p>
+ 
+<p>Pokud máte zájem o zprovoznění ve Vaší restauraci, tak se můžete zdarma zaregistrovat na stránce <a href="http://huerate.cz/signup?ref={0}">http://huerate.cz/signup</a> a pak postupovat podle návodu na <a href="http://huerate.cz/help?ref={0}">http://huerate.cz/help</a>. Všechno by mělo fungovat, ale pokud by byl přece jenom nějaký problém nebo by bylo potřeba asistence, tak mi neváhejte napsat na jakub@huerate.cz.</p>
+
+<p></p> 
+<p>Předem mockrát děkuji za spolupráci,</p>
+ 
+<p>Jakub Kadlubiec<br />
+jakub@huerate.cz</p>

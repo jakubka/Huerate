@@ -1,0 +1,773 @@
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+@font-face {
+  font-family: 'LiberationSerifRegular';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/LiberationSerif-Regular.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'LiberationSerifBold';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/LiberationSerif-Bold.ttf");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'LiberationSerifBoldItalic';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/LiberationSerif-BoldItalic.ttf");
+  font-weight: bold; }
+
+@font-face {
+  font-family: 'LiberationSerifItalic';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/LiberationSerif-Italic.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: 'OpenSansRegular';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/OpenSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'OpenSansLight';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/OpenSans-Light.ttf");
+  font-weight: 200;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'OpenSansBold';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/OpenSans-Bold.ttf");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'OpenSansExtraBold';
+  src: url("http://hueratefiles.blob.core.windows.net/public/Content/Fonts/OpenSans-ExtraBold.ttf");
+  font-weight: 900;
+  font-style: normal; }
+
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+.clear {
+  clear: both; }
+
+.hidden {
+  display: none; }
+
+strong {
+  font-weight: bold; }
+
+a {
+  text-decoration: underline;
+  color: #f04400; }
+  a:hover, a:focus {
+    text-decoration: none; }
+
+a.flip-underline, div#header-strip div.main-wrapper a.mail, div#header-strip div#header a.mail {
+  text-decoration: none; }
+  a.flip-underline:hover, div#header-strip div.main-wrapper a.mail:hover, div#header-strip div#header a.mail:hover, a.flip-underline:focus, div#header-strip div.main-wrapper a.mail:focus, div#header-strip div#header a.mail:focus {
+    text-decoration: underline; }
+
+a.no-underline, .button, .button-red, form fieldset input[type=submit], div#footer div.right-col form input[type=submit], .button-white, div#header-strip div.main-wrapper a.button-white, div#header-strip div#header a.button-white {
+  text-decoration: none; }
+  a.no-underline:hover, .button:hover, .button-red:hover, form fieldset input[type=submit]:hover, div#footer div.right-col form input[type=submit]:hover, .button-white:hover, div#header-strip div.main-wrapper a.button-white:hover, div#header-strip div#header a.button-white:hover, a.no-underline:focus, .button:focus, .button-red:focus, form fieldset input[type=submit]:focus, div#footer div.right-col form input[type=submit]:focus, .button-white:focus, div#header-strip div.main-wrapper a.button-white:focus, div#header-strip div#header a.button-white:focus {
+    text-decoration: none; }
+
+.button, .button-red, form fieldset input[type=submit], div#footer div.right-col form input[type=submit], .button-white, div#header-strip div.main-wrapper a.button-white, div#header-strip div#header a.button-white {
+  -moz-border-radius: 1.875em;
+  -webkit-border-radius: 1.875em;
+  border-radius: 1.875em;
+  -moz-box-shadow: inset 0px 1px 0px 0 white;
+  -webkit-box-shadow: inset 0px 1px 0px 0 white;
+  box-shadow: inset 0px 1px 0px 0 white;
+  -moz-box-shadow: 0px 1px 0px 0 rgba(100, 95, 91, 0.3);
+  -webkit-box-shadow: 0px 1px 0px 0 rgba(100, 95, 91, 0.3);
+  box-shadow: 0px 1px 0px 0 rgba(100, 95, 91, 0.3);
+  font-family: 'OpenSansRegular';
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8125em;
+  padding: 0.3125em 1em; }
+  .button:focus, .button-red:focus, form fieldset input[type=submit]:focus, div#footer div.right-col form input[type=submit]:focus, .button-white:focus, div#header-strip div.main-wrapper a.button-white:focus, div#header-strip div#header a.button-white:focus, .button:hover, .button-red:hover, form fieldset input[type=submit]:hover, div#footer div.right-col form input[type=submit]:hover, .button-white:hover, div#header-strip div.main-wrapper a.button-white:hover, div#header-strip div#header a.button-white:hover {
+    -moz-border-radius: 1.875em;
+    -webkit-border-radius: 1.875em;
+    border-radius: 1.875em; }
+
+.button-large, div#header div.wrapper p a.button-red, div#register div.right-col form fieldset input[type=submit] {
+  font-family: 'OpenSansBold';
+  font-size: 1.0625em;
+  padding: 0.75em 1.875em; }
+
+.button-medium, div#header-strip div.main-wrapper div#js-login-popup-data form input[type=submit], div#header-strip div#header div#js-login-popup-data form input[type=submit] {
+  font-family: 'OpenSansBold';
+  font-size: 0.875em;
+  padding: 0.5em 1.625em; }
+
+.button-red, form fieldset input[type=submit], div#footer div.right-col form input[type=submit] {
+  background-color: #f04400;
+  color: white; }
+  .button-red:disabled, form fieldset input[type=submit]:disabled, div#footer div.right-col form input[type=submit]:disabled {
+    background-color: #606060; }
+
+.button-white, div#header-strip div.main-wrapper a.button-white, div#header-strip div#header a.button-white {
+  background: #d7ccc5;
+  /* Old browsers */
+  background: -moz-linear-gradient(bottom, #e7e4e1 0em, white 100%);
+  /* FF3.6+ */
+  /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d7ccc5), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(bottom, #e7e4e1 0em, white 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(bottom, #e7e4e1 0em, white 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(bottom, #e7e4e1 0em, white 100%);
+  /* IE10+ */
+  background: linear-gradient(bottom, #e7e4e1 0em, white 100%);
+  /* W3C */ }
+
+table {
+  width: 100%;
+  color: #000;
+  font-size: 0.9375em; }
+  table td {
+    padding-top: 0.625em;
+    padding-bottom: 0.625em;
+    border-bottom: 1px solid #e7e2de; }
+  table td.main {
+    font-size: 1.125em;
+    font-family: 'LiberationSerif'; }
+  table td.grey {
+    color: #7c7c7c; }
+  table td:last-child {
+    text-align: right; }
+
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+div.main-wrapper, div#header {
+  max-width: 1050px;
+  min-width: 990px;
+  margin: 0 auto;
+  width: 61.875%; }
+
+div#bgimg {
+  height: 60em;
+  width: 100%;
+  position: absolute;
+  left: 40%;
+  background-image: url("http://hueratefiles.blob.core.windows.net/public/Content/Images/Home/header-bg.png");
+  background-position: 0 top;
+  background-repeat: no-repeat;
+  z-index: -1;
+  top: 0; }
+
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+.clear {
+  clear: both; }
+
+.hidden {
+  display: none; }
+
+strong {
+  font-weight: bold; }
+
+a {
+  text-decoration: underline;
+  color: #f04400; }
+  a:hover, a:focus {
+    text-decoration: none; }
+
+a.flip-underline, div#header-strip div.main-wrapper a.mail, div#header-strip div#header a.mail {
+  text-decoration: none; }
+  a.flip-underline:hover, div#header-strip div.main-wrapper a.mail:hover, div#header-strip div#header a.mail:hover, a.flip-underline:focus, div#header-strip div.main-wrapper a.mail:focus, div#header-strip div#header a.mail:focus {
+    text-decoration: underline; }
+
+a.no-underline, .button, .button-red, form fieldset input[type=submit], div#footer div.right-col form input[type=submit], .button-white, div#header-strip div.main-wrapper a.button-white, div#header-strip div#header a.button-white {
+  text-decoration: none; }
+  a.no-underline:hover, .button:hover, .button-red:hover, form fieldset input[type=submit]:hover, div#footer div.right-col form input[type=submit]:hover, .button-white:hover, div#header-strip div.main-wrapper a.button-white:hover, div#header-strip div#header a.button-white:hover, a.no-underline:focus, .button:focus, .button-red:focus, form fieldset input[type=submit]:focus, div#footer div.right-col form input[type=submit]:focus, .button-white:focus, div#header-strip div.main-wrapper a.button-white:focus, div#header-strip div#header a.button-white:focus {
+    text-decoration: none; }
+
+.button, .button-red, form fieldset input[type=submit], div#footer div.right-col form input[type=submit], .button-white, div#header-strip div.main-wrapper a.button-white, div#header-strip div#header a.button-white {
+  -moz-border-radius: 1.875em;
+  -webkit-border-radius: 1.875em;
+  border-radius: 1.875em;
+  -moz-box-shadow: inset 0px 1px 0px 0 white;
+  -webkit-box-shadow: inset 0px 1px 0px 0 white;
+  box-shadow: inset 0px 1px 0px 0 white;
+  -moz-box-shadow: 0px 1px 0px 0 rgba(100, 95, 91, 0.3);
+  -webkit-box-shadow: 0px 1px 0px 0 rgba(100, 95, 91, 0.3);
+  box-shadow: 0px 1px 0px 0 rgba(100, 95, 91, 0.3);
+  font-family: 'OpenSansRegular';
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8125em;
+  padding: 0.3125em 1em; }
+  .button:focus, .button-red:focus, form fieldset input[type=submit]:focus, div#footer div.right-col form input[type=submit]:focus, .button-white:focus, div#header-strip div.main-wrapper a.button-white:focus, div#header-strip div#header a.button-white:focus, .button:hover, .button-red:hover, form fieldset input[type=submit]:hover, div#footer div.right-col form input[type=submit]:hover, .button-white:hover, div#header-strip div.main-wrapper a.button-white:hover, div#header-strip div#header a.button-white:hover {
+    -moz-border-radius: 1.875em;
+    -webkit-border-radius: 1.875em;
+    border-radius: 1.875em; }
+
+.button-large, div#header div.wrapper p a.button-red, div#register div.right-col form fieldset input[type=submit] {
+  font-family: 'OpenSansBold';
+  font-size: 1.0625em;
+  padding: 0.75em 1.875em; }
+
+.button-medium, div#header-strip div.main-wrapper div#js-login-popup-data form input[type=submit], div#header-strip div#header div#js-login-popup-data form input[type=submit] {
+  font-family: 'OpenSansBold';
+  font-size: 0.875em;
+  padding: 0.5em 1.625em; }
+
+.button-red, form fieldset input[type=submit], div#footer div.right-col form input[type=submit] {
+  background-color: #f04400;
+  color: white; }
+  .button-red:disabled, form fieldset input[type=submit]:disabled, div#footer div.right-col form input[type=submit]:disabled {
+    background-color: #606060; }
+
+.button-white, div#header-strip div.main-wrapper a.button-white, div#header-strip div#header a.button-white {
+  background: #d7ccc5;
+  /* Old browsers */
+  background: -moz-linear-gradient(bottom, #e7e4e1 0em, white 100%);
+  /* FF3.6+ */
+  /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d7ccc5), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(bottom, #e7e4e1 0em, white 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(bottom, #e7e4e1 0em, white 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(bottom, #e7e4e1 0em, white 100%);
+  /* IE10+ */
+  background: linear-gradient(bottom, #e7e4e1 0em, white 100%);
+  /* W3C */ }
+
+table {
+  width: 100%;
+  color: #000;
+  font-size: 0.9375em; }
+  table td {
+    padding-top: 0.625em;
+    padding-bottom: 0.625em;
+    border-bottom: 1px solid #e7e2de; }
+  table td.main {
+    font-size: 1.125em;
+    font-family: 'LiberationSerif'; }
+  table td.grey {
+    color: #7c7c7c; }
+  table td:last-child {
+    text-align: right; }
+
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+h1 {
+  font-size: 4.5em; }
+
+h2 {
+  font-size: 4.0625em; }
+
+form fieldset label {
+  display: inline-block;
+  color: #4e4946;
+  margin-bottom: 0.5em;
+  font-family: 'LiberationSerifBoldItalic'; }
+form fieldset .hint {
+  display: block;
+  float: right;
+  font-size: 92%;
+  color: #948d89; }
+form fieldset input[type=text],
+form fieldset input[type=password],
+form fieldset input[type=email] {
+  width: 92%;
+  height: 3.25em;
+  background-color: #f6f6f6;
+  border: none;
+  border-bottom: solid 1px #d4d4d4;
+  margin-bottom: 2em;
+  padding: 0 4%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4); }
+form fieldset input[type=checkbox] {
+  margin-bottom: 2em;
+  padding: 0 4%;
+  margin-left: 5%; }
+form fieldset input[type=submit] {
+  border: none;
+  margin-bottom: 0; }
+form fieldset div.footer {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid #e0dbd8; }
+  form fieldset div.footer * {
+    color: #948d89;
+    font-size: 95%; }
+
+html {
+  height: 100%; }
+
+body {
+  background-color: #fff;
+  color: #5e5e5e;
+  font: normal 100% Cambria, Georgia, serif;
+  font-size: 100%;
+  /* 16px */
+  width: 100%;
+  /* 1600px  */
+  height: 100%;
+  margin: 0;
+  font-family: 'OpenSansRegular';
+  background: #d7ccc5;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d7ccc5 0em, white 34.25em);
+  /* FF3.6+ */
+  /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d7ccc5), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #d7ccc5 0em, white 34.25em);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #d7ccc5 0em, white 34.25em);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #d7ccc5 0em, white 34.25em);
+  /* IE10+ */
+  background: linear-gradient(top, #d7ccc5 0em, white 34.25em);
+  /* W3C */
+  background-repeat: no-repeat; }
+
+/* HEADER STRIP */
+div#header-strip {
+  border-bottom: 1px solid #e5deda;
+  position: relative; }
+  div#header-strip div.main-wrapper, div#header-strip div#header {
+    text-align: right;
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+    position: relative; }
+    div#header-strip div.main-wrapper h1, div#header-strip div#header h1 {
+      font-size: 1em;
+      text-align: left;
+      display: inline;
+      float: left; }
+      div#header-strip div.main-wrapper h1 a, div#header-strip div#header h1 a {
+        font-family: 'OpenSansExtraBold';
+        text-decoration: none;
+        font-size: 1.3em; }
+        div#header-strip div.main-wrapper h1 a:hover, div#header-strip div#header h1 a:hover {
+          text-decoration: underline; }
+    div#header-strip div.main-wrapper a.mail, div#header-strip div#header a.mail {
+      color: #fff;
+      font-family: 'OpenSansBold';
+      font-size: 0.875em;
+      background-image: url("http://hueratefiles.blob.core.windows.net/public/Content/Images/Home/ico-mail.png");
+      background-repeat: no-repeat;
+      background-position: left center;
+      padding-left: 2.0625em; }
+    div#header-strip div.main-wrapper a.button-white, div#header-strip div#header a.button-white, div#header-strip div.main-wrapper a.button-white, div#header-strip div#header div.main-wrapper a.button-white, div#header-strip div.main-wrapper div#header a.button-white, div#header-strip div.main-wrapper div#header a.button-white, div#header-strip div#header div.main-wrapper a.button-white, div#header-strip div#header a.button-white {
+      margin-left: 1.5625em; }
+    div#header-strip div.main-wrapper div#js-login-popup-data, div#header-strip div#header div#js-login-popup-data {
+      background-color: #fff;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      -moz-box-shadow: 0 0 20px 0px black;
+      -webkit-box-shadow: 0 0 20px 0px black;
+      box-shadow: 0 0 20px 0px black;
+      width: 269px;
+      text-align: left;
+      position: absolute;
+      right: 0;
+      top: 4.15em;
+      z-index: 10; }
+      div#header-strip div.main-wrapper div#js-login-popup-data form, div#header-strip div#header div#js-login-popup-data form {
+        margin: 0 auto;
+        width: 229px;
+        padding: 1.0em 0; }
+        div#header-strip div.main-wrapper div#js-login-popup-data form input[type=text], div#header-strip div#header div#js-login-popup-data form input[type=text],
+        div#header-strip div.main-wrapper div#js-login-popup-data form input[type=password],
+        div#header-strip div#header div#js-login-popup-data form input[type=password],
+        div#header-strip div.main-wrapper div#js-login-popup-data form input[type=email],
+        div#header-strip div#header div#js-login-popup-data form input[type=email] {
+          margin-bottom: 1.5em;
+          height: 2.5em; }
+        div#header-strip div.main-wrapper div#js-login-popup-data form input[type=submit], div#header-strip div#header div#js-login-popup-data form input[type=submit] {
+          margin-left: auto;
+          margin-right: auto;
+          display: block; }
+      div#header-strip div.main-wrapper div#js-login-popup-data div.validation-summary-errors, div#header-strip div#header div#js-login-popup-data div.validation-summary-errors {
+        color: #F04400; }
+
+/* HEADER */
+div#header {
+  margin-bottom: 7em;
+  position: relative; }
+  div#header div.wrapper {
+    width: 40%; }
+    div#header div.wrapper h1 {
+      color: #f04400;
+      font-size: 2.1875em;
+      font-weight: bold;
+      margin-top: 1em;
+      margin-bottom: 1.5em;
+      font-family: 'OpenSansExtraBold'; }
+    div#header div.wrapper h2 {
+      color: #91847e;
+      line-height: 1em;
+      margin-bottom: 0.5em;
+      font-family: 'LiberationSerifRegular'; }
+      div#header div.wrapper h2 span {
+        color: #4e4946;
+        font-family: 'LiberationSerifBoldItalic'; }
+    div#header div.wrapper p {
+      font-size: 1.125em;
+      line-height: 1.6em;
+      color: #5d524b;
+      margin-bottom: 3em;
+      font-family: 'OpenSansLight'; }
+      div#header div.wrapper p a.button-red {
+        display: inline-block;
+        margin-bottom: 1.6em; }
+      div#header div.wrapper p span {
+        color: #948d89;
+        font-size: 0.8125em;
+        text-align: center;
+        display: block;
+        width: 48%;
+        line-height: 1.2em; }
+  div#header:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 110%;
+    left: 45%;
+    top: 0;
+    background-image: url("http://hueratefiles.blob.core.windows.net/public/Content/Images/Home/tablet.png");
+    background-position: left top;
+    background-repeat: no-repeat; }
+
+/* CONTENT */
+div.row {
+  clear: both; }
+  div.row h1 {
+    text-align: center;
+    position: relative;
+    font-size: 2.5em;
+    margin-top: 2em;
+    margin-bottom: 2em; }
+    div.row h1:before {
+      display: block;
+      content: '';
+      background: white;
+      height: 1px;
+      border-top: 2px solid #e0dbd8;
+      border-bottom: 1px solid #e0dbd8;
+      position: absolute;
+      top: 0.65em;
+      left: 0;
+      width: 31.31313%; }
+    div.row h1:after {
+      display: block;
+      width: 200px;
+      content: '';
+      background: white;
+      height: 1px;
+      border-top: 2px solid #e0dbd8;
+      border-bottom: 1px solid #e0dbd8;
+      position: absolute;
+      top: 0.65em;
+      right: 0;
+      width: 31.31313%; }
+  div.row div.col {
+    float: left;
+    text-align: center; }
+    div.row div.col h2 {
+      margin-bottom: 1em;
+      font-size: 1.4375em; }
+  div.row.cols-3 div.col {
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top: 13%;
+    width: 24.94949%; }
+    div.row.cols-3 div.col.devices {
+      margin-right: 6.36364%;
+      background-image: url("http://hueratefiles.blob.core.windows.net/public/Content/Images/Home/devices.png"); }
+    div.row.cols-3 div.col.slider {
+      float: none;
+      margin: 0 auto;
+      border-left: 1px solid #E0DBD8;
+      border-right: 1px solid #E0DBD8;
+      padding-left: 5.73158%;
+      padding-right: 5.73158%;
+      background-image: url("http://hueratefiles.blob.core.windows.net/public/Content/Images/Home/slider.png"); }
+    div.row.cols-3 div.col.stats {
+      float: right;
+      margin-left: 6.36364%;
+      background-image: url("http://hueratefiles.blob.core.windows.net/public/Content/Images/Home/stats.png"); }
+  div.row.cols-4 {
+    margin-bottom: 5em; }
+    div.row.cols-4 div.col {
+      width: 25%;
+      background-position: center top;
+      background-repeat: no-repeat;
+      padding-top: 9em; }
+      div.row.cols-4 div.col h2 {
+        font-family: 'LiberationSerifBoldItalic';
+        font-size: 1.125em; }
+      div.row.cols-4 div.col p {
+        font-size: 0.875em;
+        font-family: 'OpenSansLight';
+        width: 80%;
+        text-align: center;
+        margin: 0 auto; }
+    div.row.cols-4 h1 + div.col {
+      background-image: url("http://hueratefiles.blob.core.windows.net/public/Content/Images/Home/hiw01.png"); }
+    div.row.cols-4 h1 + div.col + div.col {
+      background-image: url("http://hueratefiles.blob.core.windows.net/public/Content/Images/Home/hiw02.png"); }
+    div.row.cols-4 h1 + div.col + div.col + div.col {
+      background-image: url("http://hueratefiles.blob.core.windows.net/public/Content/Images/Home/hiw03.png"); }
+    div.row.cols-4 h1 + div.col + div.col + div.col + div.col {
+      background-image: url("http://hueratefiles.blob.core.windows.net/public/Content/Images/Home/hiw04.png"); }
+
+/* REGISTER */
+div#register {
+  padding-top: 4em;
+  padding-bottom: 4em;
+  background-color: #e64500; }
+  div#register form {
+    background-color: white; }
+  div#register div.left-col {
+    float: left;
+    width: 40.70707%;
+    padding-top: 3.6em; }
+    div#register div.left-col h1 {
+      font-family: 'OpenSansRegular';
+      font-size: 3.125em;
+      color: #ffad8a;
+      line-height: 1.2em; }
+      div#register div.left-col h1 span {
+        font-family: 'LiberationSerifBoldItalic';
+        font-size: 160%;
+        color: #fff; }
+    div#register div.left-col ul {
+      margin-top: 3em; }
+      div#register div.left-col ul li {
+        color: #fff;
+        padding: .8em 0 .8em 1.5em;
+        border-top: 1px solid #e86b36;
+        background: url("http://hueratefiles.blob.core.windows.net/public/Content/Images/Home/bullet.png") no-repeat left center; }
+      div#register div.left-col ul li:first-child {
+        border: none; }
+  div#register div.right-col {
+    width: 40.70707%;
+    float: right; }
+    div#register div.right-col form {
+      padding: 4px;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px; }
+      div#register div.right-col form fieldset {
+        border: 1px solid #e0dbd8;
+        margin: 0 auto;
+        padding: 10.91811% 8.68486%; }
+        div#register div.right-col form fieldset input[type=submit] {
+          margin-top: 1em; }
+
+/* FOOTER */
+div#footer {
+  padding-top: 5em; }
+  div#footer h1 {
+    font-family: 'LiberationSerifBoldItalic';
+    font-size: 1.4375em;
+    margin-bottom: 1em; }
+  div#footer div.left-col {
+    width: 50%;
+    float: left;
+    font-size: .95em;
+    line-height: 1.6em;
+    border-right: 1px solid #e0dbd8; }
+    div#footer div.left-col p {
+      margin-right: 1.5em; }
+  div#footer div.right-col {
+    width: 44.84848%;
+    float: right; }
+    div#footer div.right-col form input[type=email] {
+      display: block;
+      height: 2.25em;
+      background-color: #f6f6f6;
+      border: none;
+      border-bottom: solid 1px #d4d4d4;
+      margin-bottom: 2em;
+      padding: 0 2%;
+      float: left;
+      width: 80%;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      border-radius: 5px;
+      -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
+      -webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
+      box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4); }
+    div#footer div.right-col form input[type=submit] {
+      border: none;
+      height: 2.3em;
+      padding-left: 1.4em;
+      padding-right: 1.4em;
+      float: right; }
+
+div#login-container {
+  width: 50%;
+  margin: 50px auto 0 auto; }
+
+.centered {
+  text-align: center; }
+
+div.help-wrapper h2 {
+  font-size: 1.375em;
+  margin: 30px 0 10px 0;
+  font-weight: bold; }
+div.help-wrapper h3 {
+  font-size: 1.25em;
+  margin: 10px 0 5px 0;
+  font-weight: bold; }
+div.help-wrapper img {
+  margin: 20px 0;
+  border: 1px solid grey;
+  padding: 3px; }
+div.help-wrapper p {
+  margin: 12px 0; }
+div.help-wrapper ul, div.help-wrapper ol {
+  margin: 1.12em 0 1.12em 40px; }
+div.help-wrapper ul li {
+  list-style-type: circle; }
+div.help-wrapper ol li {
+  list-style-type: decimal; }
+
+/* FOOTER STRIP */
+#footer-strip {
+  border-top: 1px solid #e9e6e4;
+  text-align: center;
+  padding: 1em 0;
+  margin-top: 5em; }
+

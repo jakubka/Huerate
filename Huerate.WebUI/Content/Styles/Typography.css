@@ -1,0 +1,107 @@
+﻿@import url("Reset.css");
+
+/* Basic styles */
+/* ---------------------------------------------------- */
+body {
+    font-family: Arial, Tahoma, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+textarea {
+    font-family: arial;
+}
+.clear {
+    clear: both;
+}
+
+/* Classes */
+.closed,
+.hidden {
+    display: none;
+}
+
+/* Headers */
+h1 {
+    color: #000;
+    font-size: 35px;
+}
+h2 {
+    color: #6d7076;
+    font-size: 20px;
+}
+h3 {
+    font-weight: bold;
+}
+
+/* Inlines */
+strong {
+    font-weight: bold;
+}
+
+/* Links */
+a,
+.anchor {
+    color: #1799db;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover,
+.anchor:hover {
+    text-decoration: underline;
+}
+a.red,
+.anchor.red {
+    color: #cc2253;
+}
+a.wrapper,
+.anchor.wrapper {
+    display: block;
+    overflow: hidden;
+}
+
+/* Slider */
+div.slider {
+    height: 8px;
+    padding: 0;
+    margin: 20px 0 15px 0;
+    border-radius: 5px;
+    background-color: #dad9d9;
+    box-shadow: inset 1px 1px 5px #b2b2b2;
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+div.slider a.ui-slider-handle {
+    width: 31px;
+    height: 31px;
+    margin-left: -15.2px;
+    position: absolute;
+    top: -12.3px;
+    left: 50%;
+    background-color: #fefefe;
+    border: 1px solid #c0c0c0;
+    display: block;
+    color: #1C94C4;
+    cursor: pointer;
+    box-shadow: inset -0.2px -1.2px 3px #cccaca;
+    z-index: 2;
+
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+}
+div.slider a.ui-slider-handle:focus {
+    outline: none !important;
+}
+
+div.slider a.ui-slider-handle i.handler-inside {
+    display: block;
+    background: #b0b3ba;
+    width: 12px;
+    height: 12px;
+    margin: 9px 0 0 9px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}

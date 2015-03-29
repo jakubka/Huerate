@@ -1,0 +1,133 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@model Huerate.WebViewModels.SignUpModel
+@using Huerate.WebUI.HtmlHelpers
+
+@{
+    Layout = "../Layout/_HomePageLayout.cshtml";
+    ViewBag.Title = Html.Tr("Huerate_Title");
+}
+
+<div id="bgimg"></div>
+<header>
+    <div id="header">
+        <div class="wrapper">
+            <hgroup>
+                <h1>Huerate</h1>
+                <h2>@Html.Tr("Home_SoHowWas") <span>@Html.Tr("Home_Everything")?</span></h2>
+            </hgroup>
+            <p>
+                @Html.Tr("Home_Intro")
+            </p>
+            <p>
+                <a class="button-red" href="#register">@Html.Tr("Restaurant_Create")</a>
+                <span>@Html.Tr("Home_ItsFree")</span>
+            </p>
+        </div>
+    </div>
+</header>
+<div class="main-wrapper row cols-3">
+    <section>
+        <h1 class="hidden">@Html.Tr("Home_Features")</h1>
+        <div class="col devices">
+            <h2>@Html.Tr("Home_Feature1_Caption")</h2>
+            <p>
+                @Html.Tr("Home_Feature1_Text")
+            </p>
+        </div>
+        <div class="col stats">
+            <h2>
+                @Html.Tr("Home_Feature2_Caption")
+            </h2>
+            <p>
+                @Html.Tr("Home_Feature2_Text")
+            </p>
+        </div>
+        <div class="col slider">
+            <h2>@Html.Tr("Home_Feature3_Caption")</h2>
+            <p>
+                @Html.Tr("Home_Feature3_Text")
+            </p>
+        </div>
+        <div class="clear"></div>
+    </section>
+</div>
+<div class="main-wrapper row cols-4">
+    <section>
+        <h1>@Html.Tr("Home_HowItWorks")</h1>
+        <div class="col">
+            <h2>@Html.Tr("Home_HowItWorks1_Caption")</h2>
+            <p>
+                @Html.Tr("Home_HowItWorks1_Text")
+            </p>
+        </div>
+        <div class="col">
+            <h2>@Html.Tr("Home_HowItWorks2_Caption")</h2>
+            <p>
+                @Html.Tr("Home_HowItWorks2_Text")
+            </p>
+        </div>
+        <div class="col">
+            <h2>@Html.Tr("Home_HowItWorks3_Caption")</h2>
+            <p>
+                @Html.Tr("Home_HowItWorks3_Text")
+            </p>
+        </div>
+        <div class="col">
+            <h2>@Html.Tr("Home_HowItWorks4_Caption")</h2>
+            <p>
+                @Html.Tr("Home_HowItWorks4_Text")
+            </p>
+        </div>
+        <div class="clear"></div>
+    </section>
+</div>
+<div id="register">
+    <div class="main-wrapper">
+        <section>
+            <div class="left-col">
+                <h1>@Html.Tr("Home_CollectCustomerFeedback_A") <span>@Html.Tr("Home_CollectCustomerFeedback_B")</span></h1>
+                <ul>
+                    <li>@Html.Tr("Home_CollectCustomerFeedback1")</li>
+                    <li>@Html.Tr("Home_CollectCustomerFeedback2")</li>
+                    <li>@Html.Tr("Home_CollectCustomerFeedback3")</li>
+                </ul>
+            </div>
+            <div class="right-col">
+                <div id="register-container">
+                    @Html.Partial("SignUpPartial", Model)
+                </div>
+            </div>
+        </section>
+        <div class="clear"></div>
+    </div>
+</div>
+<div id="footer">
+    <div class="main-wrapper">
+        <div class="left-col">
+            <section>
+                <h1>@Html.Tr("Home_RequestFeature")</h1>
+                <p>@Html.Raw(string.Format(@Html.Tr("Home_RequestFeature_Text"), "<a href=\"mailto:info@huerate.cz\">", "</a>"))</p>
+            </section>
+        </div>
+        <div class="right-col">
+            <section>
+                <h1>@Html.Tr("Home_JoinMailingList")</h1>
+                @using (Html.BeginForm("NewsletterSubscribe", "HomePage"))
+                {
+                    <input name="Email" type="email" value="" />
+                    <input type="submit" value="Join" class="submit"/>
+
+                    <div class="clear"></div>
+                }
+            </section>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

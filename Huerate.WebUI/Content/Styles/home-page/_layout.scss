@@ -1,0 +1,31 @@
+﻿/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+
+div.wrapper-all {
+	
+}
+
+div.main-wrapper {
+	max-width: 1050px;
+	min-width: 990px;
+	margin: 0 auto;
+	width: $defaultContentWidth / $defaultPageWidth * 100%;
+}
+
+div#bgimg {
+		height: 60em;
+		width: 100%;
+		position: absolute;
+		left: 40%;
+
+		background-image: url($homeImagesPath + "header-bg.png");
+		background-position: 0 top;
+		background-repeat: no-repeat;
+		z-index: -1;
+		top: 0;
+}

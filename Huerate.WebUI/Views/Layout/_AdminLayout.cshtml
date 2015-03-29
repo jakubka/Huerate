@@ -1,0 +1,87 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using Huerate.WebUI.HtmlHelpers
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@ViewBag.Title</title>
+        
+        <meta name="viewport" content="width=device-width" />
+        
+        @Html.Partial("FaviconPartial")
+        <link href="@Url.WebObjectPath("~/Content/Styles/Reset.css")" rel="stylesheet" type="text/css">
+        <link href="@Url.WebObjectPath("~/Content/Styles/admin.css")" rel="stylesheet" type="text/css"/>
+
+        <script src="@Url.WebObjectPath("~/Content/Scripts/ThirdParty/jquery-1.7.2.js")"> </script>
+        
+        @RenderSection("Script", false)
+
+        @Html.Partial("GoogleAnalytics")
+    </head>
+
+    <body>
+        <div class="wrapper-all">
+            <div id="header">
+                <h1>@Html.Tr("General_RestaurantAdministration") @ViewBag.CurrentUser.DisplayName</h1>
+                <ul>
+                    <li class="logout">@Html.ActionLink(Html.Tr("Action_Logout"), "Logout", "Account")</li>
+                </ul>
+            </div>
+
+            <div class="navigation-wrapper">
+                <nav>
+                    <ul>
+                        <li>@Html.MenuLink(Html.Tr("Admin_DayResults"), "Index", "Admin")</li>
+                        <li>@Html.MenuLink(Html.Tr("Admin_OverallResults"), "OverallResults", "Admin")</li>
+                        <li>@Html.MenuLink(Html.Tr("Admin_EditQuestions"), "EditForm", "Admin")</li>
+                        <li>@Html.MenuLink(Html.Tr("Admin_RestaurantSettings"), "RestaurantSettings", "Admin")</li>
+                        <li>@Html.MenuLink(Html.Tr("Admin_AccountSettings"), "AccountSettings", "Admin")</li>
+                        <li>@Html.MenuLink(Html.Tr("Admin_Help"), "Help", "Admin")</li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="content-wrapper">
+                
+                <div class="messagebox-info">
+                    <div class="info" title="@Html.Tr("Admin_UniqueLinkInfo")">
+                    </div>
+                    <p>
+                        @{
+                            string surveyLink = Url.Action("Index", "Form", new {codeName = ViewBag.CurrentUser.CodeName}, "http");
+                            @Html.Tr("YourSurveyLink")
+                            <strong>@Html.ActionLink(surveyLink, "Index", "Form", new {codeName = ViewBag.CurrentUser.CodeName}, new {target = "_blank"})</strong>
+                        }
+                    </p>
+                    <a class="qrcode" href="@Url.Action("QrCode", "Image", new {restaurantCodeName = ViewBag.CurrentUser.CodeName, download = true})">
+                        <img src="@Url.Action("QrCode", "Image", new {restaurantCodeName = ViewBag.CurrentUser.CodeName})" alt="@Html.Tr("Admin_DownloadQrCode")" title="@Html.Tr("Admin_DownloadQrCode")" />
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                @if (TempData.ContainsKey("Messages"))
+                {
+                    <section class="messages">
+                        @foreach (var message in (List<string>)TempData["Messages"])
+                        {
+                            <div class="message">
+                                @message
+                            </div>
+                        }
+                    </section>
+                }
+
+                <section>
+                    @RenderBody()
+                </section>
+            </div>      
+        </div>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using Huerate.WebUI.HtmlHelpers
+@model Huerate.WebViewModels.ErrorModel
+
+@{
+    Layout = "../Layout/_HomePageLayout.cshtml";
+    ViewBag.Title = Html.Tr("Huerate_Title");
+    ViewBag.OnPageTitle = @Html.Tr("ErrorPage_OnPageTitle");
+}
+
+<div class="main-wrapper">
+    <p>
+        @Html.Raw(string.Format(@Html.Tr("ErrorPage_Apologies"), Model.ErrorDescription))
+    </p>
+</div>

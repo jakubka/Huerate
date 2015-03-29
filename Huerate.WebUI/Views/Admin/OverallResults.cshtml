@@ -1,0 +1,50 @@
+﻿@*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*@
+
+@using System.Globalization
+@using Huerate.WebUI.HtmlHelpers
+@model Huerate.WebViewModels.Admin.ResultsModel
+
+@{
+    Layout = "~/Views/Admin/Results.cshtml";
+}
+
+@{
+    CultureInfo currentCulture = new CultureInfo(ViewBag.CurrentLanguage);
+}
+
+@section Results
+{
+    @foreach (var q in Model.Questions)
+    {
+        @Html.Partial("QuestionPartial", q)
+    }
+
+    <div class="text-answers">
+        @if (Model.TextAnswers.Any())
+        {
+            <h3>@Html.Tr("Admin_OverallTextAnswers"):</h3>
+            <ul>
+                @{
+                    string timePattern = currentCulture.DateTimeFormat.LongDatePattern + " " + currentCulture.DateTimeFormat.ShortTimePattern;
+                }
+
+                @foreach (var textAnswer in Model.TextAnswers)
+                {
+                    <li>
+                        <b>@textAnswer.Created.ToLocalTime().ToString(timePattern, currentCulture)</b>: @textAnswer.TextAnswer
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <i>@Html.Tr("Admin_OverallNoTextAnswers")</i>
+        }
+    </div>
+}

@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="Action_Logout" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+	<data name="Admin_DayResults" xml:space="preserve">
+    <value>Guests answers (daily)</value>
+  </data>
+	<data name="AreYouInterested" xml:space="preserve">
+    <value>Do you want to know what your customers want?</value>
+  </data>
+	<data name="AskThem" xml:space="preserve">
+    <value>Ask them!</value>
+  </data>
+	<data name="General_Email_Address" xml:space="preserve">
+    <value>Email address</value>
+  </data>
+	<data name="General_LogIn" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+	<data name="General_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+	<data name="Form_ThankYou" xml:space="preserve">
+    <value>Thank You!</value>
+  </data>
+	<data name="Form_TheBest" xml:space="preserve">
+    <value>Best</value>
+  </data>
+	<data name="Form_TheWorst" xml:space="preserve">
+    <value>Worst</value>
+  </data>
+	<data name="Form_WeAppreciateYourHelp" xml:space="preserve">
+    <value>We really appreciate Your help.</value>
+  </data>
+	<data name="Home_CollectCustomerFeedback1" xml:space="preserve">
+    <value>Start by creating your account</value>
+  </data>
+	<data name="Home_CollectCustomerFeedback2" xml:space="preserve">
+    <value>It is completely free</value>
+  </data>
+	<data name="Home_CollectCustomerFeedback3" xml:space="preserve">
+    <value>You can delete the account anytime</value>
+  </data>
+	<data name="Home_CollectCustomerFeedback_A" xml:space="preserve">
+    <value>Collect customer</value>
+  </data>
+	<data name="Home_CollectCustomerFeedback_B" xml:space="preserve">
+    <value>feedback</value>
+  </data>
+	<data name="Home_Everything" xml:space="preserve">
+    <value>everything</value>
+  </data>
+	<data name="Home_Feature1_Caption" xml:space="preserve">
+    <value>Works on any device</value>
+  </data>
+	<data name="Home_Feature1_Text" xml:space="preserve">
+    <value>Huerate is a web application. It runs on any smartphone or tablet that has an internet browser.</value>
+  </data>
+	<data name="Home_Feature2_Caption" xml:space="preserve">
+    <value>Daily statistics</value>
+  </data>
+	<data name="Home_Feature2_Text" xml:space="preserve">
+    <value>results are always available on restaurant’s password protected online account.</value>
+  </data>
+	<data name="Home_Feature3_Caption" xml:space="preserve">
+    <value>Informative &amp; Easy-to-use</value>
+  </data>
+	<data name="Home_Feature3_Text" xml:space="preserve">
+    <value>Three types of questions provide comprehensive feedback. Answering by touch is quick and fun.</value>
+  </data>
+	<data name="Home_Features" xml:space="preserve">
+    <value>Features</value>
+  </data>
+	<data name="Home_HowItWorks" xml:space="preserve">
+    <value>How it works</value>
+  </data>
+	<data name="Home_HowItWorks1_Caption" xml:space="preserve">
+    <value>Create your account</value>
+  </data>
+	<data name="Home_HowItWorks1_Text" xml:space="preserve">
+    <value>It takes no more than three minutes to set it up</value>
+  </data>
+	<data name="Home_HowItWorks2_Caption" xml:space="preserve">
+    <value>Get a unique survey link</value>
+  </data>
+	<data name="Home_HowItWorks2_Text" xml:space="preserve">
+    <value>For example huerate.com/myrestaurant</value>
+  </data>
+	<data name="Home_HowItWorks3_Caption" xml:space="preserve">
+    <value>Give the link to customers</value>
+  </data>
+	<data name="Home_HowItWorks3_Text" xml:space="preserve">
+    <value>Use the link or a QR code to lead them to your survey</value>
+  </data>
+	<data name="Home_HowItWorks4_Caption" xml:space="preserve">
+    <value>Get the results</value>
+  </data>
+	<data name="Home_HowItWorks4_Text" xml:space="preserve">
+    <value>Log in to your account to see the statistics</value>
+  </data>
+	<data name="Home_Intro" xml:space="preserve">
+    <value>Huerate is a touch-based comment card for your restaurant. Collect customer feedback the beautiful way.</value>
+  </data>
+	<data name="Home_ItsFree" xml:space="preserve">
+    <value>It’s free and you can delete your account anytime</value>
+  </data>
+	<data name="Home_JoinMailingList" xml:space="preserve">
+    <value>Join our mailing list</value>
+  </data>
+	<data name="Home_RequestFeature" xml:space="preserve">
+    <value>Request a feature</value>
+  </data>
+	<data name="Home_RequestFeature_Text" xml:space="preserve">
+    <value>We work hard to make Huerate the best tool for collecting customer feedback. {0}Contact us{1} to request a feature you’re missing in the app.</value>
+  </data>
+	<data name="Home_SoHowWas" xml:space="preserve">
+    <value>So how was</value>
+  </data>
+	<data name="Huerate_Title" xml:space="preserve">
+    <value>Huerate.com</value>
+  </data>
+	<data name="Lost_Password" xml:space="preserve">
+    <value>Lost password</value>
+  </data>
+	<data name="NewsletterSubmit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+	<data name="NextDay" xml:space="preserve">
+    <value>Next day</value>
+  </data>
+	<data name="NextDayTooltip" xml:space="preserve">
+    <value>Display results from {0}.</value>
+  </data>
+	<data name="Admin_Answers" xml:space="preserve">
+    <value>answers</value>
+  </data>
+	<data name="PrevDay" xml:space="preserve">
+    <value>Previous day</value>
+  </data>
+	<data name="Restaurant_Create" xml:space="preserve">
+    <value>Create Account</value>
+  </data>
+	<data name="Restaurant_Email" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+	<data name="Restaurant_Name" xml:space="preserve">
+    <value>Restaurant Name</value>
+  </data>
+	<data name="Restaurant_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+	<data name="Results" xml:space="preserve">
+    <value>Results</value>
+  </data>
+	<data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+	<data name="StayInTouch" xml:space="preserve">
+    <value>Let's stay in touch!</value>
+  </data>
+	<data name="Admin_DayTextAnswers" xml:space="preserve">
+    <value>Text answers from {0}</value>
+  </data>
+	<data name="Thanks" xml:space="preserve">
+    <value>Thanks!</value>
+  </data>
+	<data name="Update_Form" xml:space="preserve">
+    <value>Update form</value>
+  </data>
+	<data name="WeWillLetYouKnow" xml:space="preserve">
+    <value>We will let you know what is going on.</value>
+  </data>
+	<data name="WriteUs" xml:space="preserve">
+    <value>Write us.</value>
+  </data>
+	<data name="YourEmail" xml:space="preserve">
+    <value>Your email</value>
+  </data>
+	<data name="YourSurveyLink" xml:space="preserve">
+    <value>Your survey link:</value>
+  </data>
+	<data name="SignInPage_Title" xml:space="preserve">
+    <value>Sign in at Huerate</value>
+  </data>
+	<data name="SignInPage_OnPageTitle" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+	<data name="SignUpPage_Title" xml:space="preserve">
+    <value>Sign up at Huerate</value>
+  </data>
+	<data name="SignUpPage_OnPageTitle" xml:space="preserve">
+    <value>Sign up</value>
+  </data>
+	<data name="Action_EnterAdmin" xml:space="preserve">
+    <value>Enter admin</value>
+  </data>
+	<data name="General_Down" xml:space="preserve">
+    <value>Down</value>
+  </data>
+	<data name="General_RestaurantAdministration" xml:space="preserve">
+    <value>Restaurant administration - </value>
+  </data>
+	<data name="General_Up" xml:space="preserve">
+    <value>Up</value>
+  </data>
+	<data name="Admin_Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+	<data name="Admin_DayNoTextAnswers" xml:space="preserve">
+    <value>No text answers from {0}</value>
+  </data>
+	<data name="Home_IncorrectEmailOrPassword" xml:space="preserve">
+    <value>Incorrect email or password</value>
+  </data>
+	<data name="General_Contact" xml:space="preserve">
+		<value>Contact</value>
+	</data>
+	<data name="General_Yes" xml:space="preserve">
+		<value>Yes</value>
+	</data>
+	<data name="General_No" xml:space="preserve">
+		<value>No</value>
+	</data>
+	<data name="HomePage_RememberLogin" xml:space="preserve">
+		<value>Remember login on this computer</value>
+	</data>
+	<data name="Form_IntroFormStep_SubmitButtonText" xml:space="preserve">
+		<value>Continue</value>
+	</data>
+	<data name="Form_IntroFormStep_TitleText" xml:space="preserve">
+		<value>Welcome to {0}</value>
+	</data>
+	<data name="Form_IntroFormStep_InfoText" xml:space="preserve">
+		<value>Dear guests, we would like to ask you to tell us your opinion about your visit. Your opinions are very valuable for us and we will use them to further improve our service. Your answers are anonymous and they are going straight to the owner. Thank you!</value>
+	</data>
+	<data name="Form_TextQuestionFormStep_SubmitButtonText" xml:space="preserve">
+		<value>Finish</value>
+	</data>
+	<data name="Form_TextQuestionFormStep_TitleText" xml:space="preserve">
+		<value>How else can we improve?</value>
+	</data>
+	<data name="Form_TextQuestionFormStep_InfoText" xml:space="preserve">
+		<value>Please enter your opionions to the field below</value>
+	</data>
+	<data name="Form_ConfirmationFormStep_TitleText" xml:space="preserve">
+		<value>Thank You!</value>
+	</data>
+	<data name="Form_ConfirmationFormStep_InfoText" xml:space="preserve">
+		<value>We really appreciate your help</value>
+	</data>
+	<data name="Form_LanguageSelectionFormStep_TitleText" xml:space="preserve">
+		<value>Choose your language</value>
+	</data>
+	<data name="Question_Enviroment_Text" xml:space="preserve">
+		<value>Enviroment</value>
+	</data>
+	<data name="Question_Food_Text" xml:space="preserve">
+		<value>Food</value>
+	</data>
+	<data name="Question_Overall_1" xml:space="preserve">
+		<value>Would you recommend restaurant to your friend?</value>
+	</data>
+	<data name="Question_Overall_2" xml:space="preserve">
+		<value>Were your expectations satisified?</value>
+	</data>
+	<data name="Question_Overall_3" xml:space="preserve">
+		<value>Will you visit us again?</value>
+	</data>
+	<data name="Question_Overall_Text" xml:space="preserve">
+		<value>Overall satisfaction</value>
+	</data>
+	<data name="Question_Service_Text" xml:space="preserve">
+		<value>Service</value>
+	</data>
+	<data name="Question_Service_1" xml:space="preserve">
+		<value>Was server fast enough?</value>
+	</data>
+	<data name="Question_Service_2" xml:space="preserve">
+		<value>Was server kind enough?</value>
+	</data>
+	<data name="Question_Service_3" xml:space="preserve">
+		<value>Was server attentive enough?</value>
+	</data>
+	<data name="Question_Food_1" xml:space="preserve">
+		<value>Was food warm enough?</value>
+	</data>
+	<data name="Question_Food_2" xml:space="preserve">
+		<value>Was food tasty?</value>
+	</data>
+	<data name="Question_Food_3" xml:space="preserve">
+		<value>Was meal portion big enough?</value>
+	</data>
+	<data name="Question_Food_4" xml:space="preserve">
+		<value>Was food as described in menu?</value>
+	</data>
+	<data name="Question_Enviroment_1" xml:space="preserve">
+		<value>Was music too loud?</value>
+	</data>
+	<data name="Question_Enviroment_2" xml:space="preserve">
+		<value>Was restaurant clean?</value>
+	</data>
+	<data name="Question_Enviroment_3" xml:space="preserve">
+		<value>Did music match restaurant type?</value>
+	</data>
+	<data name="Question_Enviroment_4" xml:space="preserve">
+		<value>Was temperature in restaurant appropriate?</value>
+	</data>
+	<data name="Question_Enviroment_5" xml:space="preserve">
+		<value>Was restroom clean?</value>
+	</data>
+	<data name="Question_Enviroment_6" xml:space="preserve">
+		<value>Was restroom well equipped?</value>
+	</data>
+	<data name="Question_Enviroment_7" xml:space="preserve">
+		<value>Were there too much smoke in restaurant?</value>
+	</data>
+	<data name="Admin_OverallResults" xml:space="preserve">
+		<value>Guests answers (all)</value>
+	</data>
+</root>

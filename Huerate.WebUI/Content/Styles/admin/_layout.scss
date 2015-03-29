@@ -1,0 +1,102 @@
+﻿/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+
+@import "admin/variables";
+
+div.wrapper-all {
+	width: $defaultContentWidth / $defaultPageWidth * 100%;
+	background: #91847e;
+	overflow: hidden;
+	$padding: 44;
+	margin: 0 auto;
+
+	#header {
+		background: #fff;
+		padding-right: $padding / $defaultContentWidth * 100%;
+		padding-left: $padding / $defaultContentWidth * 20%;
+	}
+
+	div.navigation-wrapper {
+		width: $defaultNavigationWidth / $defaultContentWidth * 100%;
+		float: left;
+	}
+
+	div.content-wrapper {
+		width: ($defaultContentWidth - $defaultNavigationWidth - (2 * $padding)) / $defaultContentWidth * 100%;
+		padding-left: $padding / $defaultContentWidth * 100%;		
+		padding-right: $padding / $defaultContentWidth * 100%;		
+		float: right;
+		background: #fff;
+		
+		h1 {
+			font-family: 'OpenSansBold';
+			font-size: 30 / $defaultFontSize * 1em;
+		}
+		
+		h2 {
+			font-family: 'OpenSansBold';
+			font-size: 20 / $defaultFontSize * 1em;
+			margin: 35px 0 7px 0;
+		}
+	}
+}
+
+@media all and (max-width: 1400px) {
+	div.wrapper-all {
+		width: 80%;
+	}
+}
+
+@media all and (max-width: 1100px) {
+	div.wrapper-all {
+		width: 100%;
+	}
+}
+
+@media all and (max-width: 680px) {
+	div.wrapper-all {
+		div.navigation-wrapper {
+			float: none;
+			width: 100%;
+
+			ul {
+				padding-top: 1em;
+				padding-bottom: 1em;
+				li {
+					a {
+						padding: 0.5em;
+					}
+				}
+			}
+		}
+		div.content-wrapper {
+			float: none;
+			width: 98%;
+			clear: both;
+			padding: 1.5em 1% 0 1%;
+		}
+	}
+}
+
+@media all and (max-width: 680px) and (min-width: 500px) {
+	div.wrapper-all {
+		div.navigation-wrapper {
+			ul {
+				padding-top: 1em;
+				padding-bottom: 0;
+				li {
+					float: left;
+					margin-right: .5em;
+					a {
+						border-bottom: none;
+					}
+				}
+			}
+		}
+	}
+}

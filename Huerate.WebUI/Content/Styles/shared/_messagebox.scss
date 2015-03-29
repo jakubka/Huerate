@@ -1,0 +1,57 @@
+﻿/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+
+@import "variables",
+		"mixins";
+
+
+@mixin messagebox-info {
+	$width: 727;
+	$leftStripWidth: 69;
+
+	background-color: #f6f6f6;
+	border: solid 1px #d5d5d5;
+	position: relative;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding-left: ($leftStripWidth * 1.5) / $width * 100%;
+	padding-right: $leftStripWidth / 4 / $width * 100%;
+	
+	@include rounded(2px);
+	@include box-shadow-in(0, 2px, 0, 0, #fff);
+
+	a.qrcode {
+		display: block;
+		float: right;
+		margin-top: 0.4em;
+
+		img {
+			height: 3em;
+		}
+	}
+
+	div.info {
+		width: $leftStripWidth / $width * 100%;
+		background-color: #eeeeee;
+		display: block;
+		position: absolute;
+		top: 2px;
+		left: 0;
+		bottom: 0;
+		border-right: 1px solid #d5d5d5;
+
+		background: url($imagesPath + "Icons/info.png") no-repeat center center;
+	}
+
+	p {
+		display: block;
+		float: left;
+		padding-top: 18 / $defaultFontSize * 1em;
+		padding-bottom: 18 / $defaultFontSize * 1em;
+	}
+}

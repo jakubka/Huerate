@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F1215B2B-C51A-4975-9310-69A820163687}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Huerate.Services</RootNamespace>
+    <AssemblyName>Huerate.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gma.QrCodeNet.Encoding">
+      <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Caching.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ApplicationServer.Caching.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.0.0.7\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\packages\RazorEngine.3.2.0\lib\net40\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridPlus">
+      <HintPath>..\packages\SendGridPlus.2.0.3\lib\net45\SendGridPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Abstractions">
+      <HintPath>..\packages\System.IO.Abstractions.1.4.0.41\lib\net35\System.IO.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnswerSets\AnswerSetService.cs" />
+    <Compile Include="AnswerSets\IAnswerSetService.cs" />
+    <Compile Include="Answers\AnswerService.cs" />
+    <Compile Include="Answers\IAnswerService.cs" />
+    <Compile Include="Cache\CacheService.cs" />
+    <Compile Include="Cache\ICacheService.cs" />
+    <Compile Include="Contacts\CookieContactPersistenceService.cs" />
+    <Compile Include="Contacts\ContactService.cs" />
+    <Compile Include="Contacts\IContactPersistenceService.cs" />
+    <Compile Include="Contacts\IContactService.cs" />
+    <Compile Include="DefaultData\DefaultDataService.cs" />
+    <Compile Include="DefaultData\IDefaultDataService.cs" />
+    <Compile Include="Email\SendGridEmailSenderService.cs" />
+    <Compile Include="Email\SmtpEmailSenderService.cs" />
+    <Compile Include="FormSteps\FormStepService.cs" />
+    <Compile Include="FormSteps\IFormStepService.cs" />
+    <Compile Include="HuerateDependencyResolver.cs" />
+    <Compile Include="Email\EmailTemplateService.cs" />
+    <Compile Include="Email\IEmailTemplateService.cs" />
+    <Compile Include="Email\IScheduledEmailSenderService.cs" />
+    <Compile Include="Email\IScheduledOutgoingEmailService.cs" />
+    <Compile Include="Email\ScheduledEmailSenderService.cs" />
+    <Compile Include="Email\ScheduledOutgoingEmailService.cs" />
+    <Compile Include="NewsletterSubscriptions\INewsletterSubscriptionService.cs" />
+    <Compile Include="NewsletterSubscriptions\NewsletterSubscriptionService.cs" />
+    <Compile Include="LocalStorage\ILocalStorageService.cs" />
+    <Compile Include="LocalStorage\LocalStorageService.cs" />
+    <Compile Include="ImageProcessing\IQrCodeService.cs" />
+    <Compile Include="ImageProcessing\QrCodeService.cs" />
+    <Compile Include="RestaurantAccounts\RestaurantAccountService.cs" />
+    <Compile Include="RestaurantAccounts\IRestaurantAccountService.cs" />
+    <Compile Include="DataServiceBase.cs" />
+    <Compile Include="Email\Email.cs" />
+    <Compile Include="Email\IEmailSenderService.cs" />
+    <Compile Include="Email\EmailSenderServiceBase.cs" />
+    <Compile Include="IDataService.cs" />
+    <Compile Include="Membership\IMembershipPersistenceService.cs" />
+    <Compile Include="Membership\IMembershipService.cs" />
+    <Compile Include="Membership\MembershipPersistenceService.cs" />
+    <Compile Include="Name\INameService.cs" />
+    <Compile Include="Name\NameService.cs" />
+    <Compile Include="Questions\QuestionService.cs" />
+    <Compile Include="Questions\IQuestionService.cs" />
+    <Compile Include="ServiceException.cs" />
+    <Compile Include="Membership\MembershipService.cs" />
+    <Compile Include="NinjectKernelFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Translations.cs.designer.cs">
+      <DependentUpon>Translations.cs.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Translations.designer.cs">
+      <DependentUpon>Translations.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ServiceBase.cs" />
+    <Compile Include="Settings\ISettingsService.cs" />
+    <Compile Include="Settings\SendGridSettings.cs" />
+    <Compile Include="Settings\SettingsService.cs" />
+    <Compile Include="Settings\SmtpSettings.cs" />
+    <Compile Include="Translations\ITranslationService.cs" />
+    <Compile Include="Translations\TranslationService.cs" />
+    <Compile Include="UrlService\IUrlService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Huerate.Configuration\Huerate.Configuration.csproj">
+      <Project>{C8322DE9-7277-45C9-B1A7-3145BCA4B1A3}</Project>
+      <Name>Huerate.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Huerate.Domain\Huerate.Domain.csproj">
+      <Project>{C41FA274-8274-4B4F-A031-33053497E4C9}</Project>
+      <Name>Huerate.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Huerate.Logging\Huerate.Logging.csproj">
+      <Project>{7E96A18F-DF7B-408F-AA3D-A2D4B75EDA2B}</Project>
+      <Name>Huerate.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Huerate.WebViewModels\Huerate.WebViewModels.csproj">
+      <Project>{9E31D95E-F2BD-44F3-91F6-E8D1999AE252}</Project>
+      <Name>Huerate.WebViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Translations.cs.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Translations.cs.designer.cs</LastGenOutput>
+      <CustomToolNamespace>Huerate.WebUI.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Translations.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Translations.designer.cs</LastGenOutput>
+      <CustomToolNamespace>Huerate.WebUI.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\CodeScales.Http.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

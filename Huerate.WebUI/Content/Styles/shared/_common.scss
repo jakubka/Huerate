@@ -1,0 +1,116 @@
+﻿/*
+Huerate - Mobile System for Customer Feedback Collection
+Master Thesis at BUT FIT (http://www.fit.vutbr.cz), 2013
+Available at http://huerate.cz
+
+Author: Bc. Jakub Kadlubiec, xkadlu00@stud.fit.vutbr.cz or jakub.kadlubiec@gmail.com
+*/
+
+@import "shared/variables",
+		"shared/mixins";
+
+.clear {
+	clear: both;
+}
+.hidden {
+	display: none;
+}
+
+// inlines
+strong {
+	font-weight: bold;
+}
+
+// links
+a {
+	text-decoration: underline;
+	color: $colorRed;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+a.flip-underline {
+	text-decoration: none;
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+a.no-underline {
+	text-decoration: none;
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+// buttons
+.button {
+	@extend a.no-underline;
+	@include rounded();
+	@include box-shadow-in(0px, 1px, 0px, 0, #fff);
+	@include box-shadow-out(0px, 1px, 0px, 0, rgba(100, 95, 91, 0.3));
+
+	&:focus,
+	&:hover {
+		@include rounded();
+	}
+
+	font-family: 'OpenSansRegular';
+	cursor: pointer;
+	display: inline-block;
+	font-size: 13 / $defaultFontSize * 1em;
+	padding: 5 / $defaultFontSize * 1em 16 / $defaultFontSize * 1em;
+}
+.button-large {
+	font-family: 'OpenSansBold';
+	font-size: 17 / $defaultFontSize * 1em;
+	padding: 12 / $defaultFontSize * 1em 30 / $defaultFontSize * 1em;
+}
+.button-medium {
+	font-family: 'OpenSansBold';
+	font-size: 14 / $defaultFontSize * 1em;
+	padding: 8 / $defaultFontSize * 1em 26 / $defaultFontSize * 1em;
+}
+.button-red {
+	@extend .button;
+	background-color: #f04400;
+	color: white;
+	&:disabled {
+		background-color: #606060;
+	}
+}
+
+.button-white {
+	@extend .button;
+
+	@include background-gradient(bottom, 0em, #e7e4e1, 100%, #fff);
+}
+
+// tables
+table {
+	width: 100%;
+	color: #000;
+	font-size: 15 / $defaultFontSize * 1em;
+
+	td {
+		padding-top: 10 / $defaultFontSize * 1em;
+		padding-bottom: 10 / $defaultFontSize * 1em;
+		border-bottom: 1px solid #e7e2de;
+	}
+
+	td.main {
+		font-size: 18 / $defaultFontSize * 1em;
+		font-family: 'LiberationSerif';
+	}
+
+	td.grey {
+		color: #7c7c7c;
+	}
+
+	td:last-child {
+		text-align: right;
+	}
+}
